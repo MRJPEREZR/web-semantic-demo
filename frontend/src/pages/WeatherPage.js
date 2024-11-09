@@ -80,7 +80,8 @@ function WeatherPage() {
     try {
       // Build the query string for attributes
       const requestBody = {
-        "sparqlQuery" : "SELECT FROM <http://example.org/dataset> WHERE {?s ?p ?o}"
+        "stationId" : stationId,
+        "attributes": attributes
       }
 
       // Make an API call to your backend with the station ID and selected attributes

@@ -1,13 +1,24 @@
 package com.wdws.finalProject.models;
 
-public class BodyRequest {
-    private String sparqlQuery;
+import java.util.List;
 
-    public void setSparqlQuery(String sparqlQuery) {
-        this.sparqlQuery = sparqlQuery;
+public class BodyRequest {
+    private String stationId;
+    private List<String> attributes; 
+
+    public void setStationId(String stationId) {
+        this.stationId = stationId;
     }
 
-    public String getSparqlQuery () {
-        return this.sparqlQuery;
+    public String getStationId () {
+        return this.stationId;
+    }
+
+    public void setAttributes(List<String> attributes) {
+        this.attributes = attributes;
+    }
+
+    public List<String> getAttributes () {
+        return this.attributes;
     }
 }
