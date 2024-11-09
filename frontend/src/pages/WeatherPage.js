@@ -79,10 +79,23 @@ function WeatherPage() {
   const handleDataRequest = async (stationId, attributes) => {
     try {
       // Build the query string for attributes
-      const queryString = attributes.join(',');
+      const requestBody = {
+        "sparqlQuery" : "SELECT FROM <http://example.org/dataset> WHERE {?s ?p ?o}"
+      }
 
       // Make an API call to your backend with the station ID and selected attributes
-      const response = await fetch(`http://your-backend-url.com/weather?station=${stationId}&attributes=${queryString}`);
+      const response = await fetch("http://localhost:8080/sparql/query", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(requestBody)
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
       const data = await response.json();
 
       // Update weather data state
