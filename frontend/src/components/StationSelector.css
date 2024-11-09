@@ -1,0 +1,39 @@
+.station-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .station-selector select {
+    padding: 8px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .attributes-checklist {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .attributes-checklist label {
+    margin: 5px 10px;
+    font-size: 14px;
+  }
+  
+  .station-selector button {
+    padding: 8px 12px;
+    font-size: 16px;
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .station-selector button:hover {
+    background-color: #357ABD;
+  }
+  

@@ -1,0 +1,2049 @@
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix ex:  <http://example.org/station/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sosa:  <http://www.w3.org/ns/sosa/> .
+
+<http://example.org/observation/temperature/07005-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07005 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "286.950000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07005-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07005 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "89"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07005-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07005 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101530"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07005-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07005 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "4.100000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07005-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07005 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "18050"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07015-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07015 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "287.850000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07015-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07015 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "92"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07015-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07015 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101610"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07015-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07015 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "4.700000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07015-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07015 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "5530"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07020-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07020 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "288.050000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07020-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07020 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "89"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07020-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07020 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101220"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07020-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07020 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "7.400000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07020-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07020 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "16000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07027-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07027 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "287.650000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07027-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07027 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "99"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07027-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07027 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101340"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07027-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07027 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "2.300000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07027-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07027 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "4370"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07037-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07037 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "288.150000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07037-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07037 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "87"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07037-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07037 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101460"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07037-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07037 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "5.300000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07037-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07037 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "20240"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07072-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07072 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "288.550000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07072-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07072 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "89"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07072-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07072 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101750"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07072-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07072 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "4.200000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07072-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07072 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "20000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07110-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07110 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "287.050000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07110-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07110 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "72"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07110-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07110 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101110"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07110-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07110 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "9.000000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07110-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07110 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "14280"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07117-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07117 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "286.750000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07117-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07117 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "78"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07117-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07117 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101150"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07117-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07117 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "4.600000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07117-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07117 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "15000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07130-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07130 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "286.550000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07130-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07130 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "94"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07130-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07130 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101400"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07130-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07130 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "4.000000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07130-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07130 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "47580"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07139-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07139 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "286.950000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07139-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07139 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "97"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07139-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07139 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101440"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07139-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07139 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "2.300000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07139-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07139 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "5130"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07149-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07149 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "289.350000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07149-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07149 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "84"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07149-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07149 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101610"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07149-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07149 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "2.500000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07149-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07149 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "20000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07168-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07168 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "290.150000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07168-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07168 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "81"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07168-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07168 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101730"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07168-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07168 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "4.000000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07168-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07168 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "20000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07181-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07181 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "291.850000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07181-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07181 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "65"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07181-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07181 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101850"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07181-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07181 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "3.500000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07181-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07181 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "60000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07190-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07190 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "288.850000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07190-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07190 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "86"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07190-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07190 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "102090"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07190-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07190 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "1.100000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07190-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07190 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "9710"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07207-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07207 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "288.550000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07207-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07207 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "72"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07207-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07207 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07207-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07207 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "5.500000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07207-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07207 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "25000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07222-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07222 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "287.050000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07222-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07222 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "95"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07222-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07222 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101470"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07222-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07222 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "2.900000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07222-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07222 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "19810"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07240-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07240 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "287.250000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07240-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07240 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "93"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07240-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07240 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101520"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07240-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07240 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "2.500000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07240-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07240 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "46480"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07255-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07255 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "288.150000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07255-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07255 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "85"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07255-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07255 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101650"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07255-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07255 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "3.300000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07255-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07255 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "14520"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07280-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07280 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "288.750000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07280-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07280 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "92"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07280-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07280 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101880"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07280-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07280 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "2.600000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07280-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07280 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "19440"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07299-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07299 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "288.450000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07299-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07299 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "80"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07299-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07299 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "102110"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07299-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07299 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "3.500000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07299-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07299 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "13850"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07314-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07314 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "289.350000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07314-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07314 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "76"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07314-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07314 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101610"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07314-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07314 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "5.000000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07314-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07314 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "16000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07335-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07335 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "287.850000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07335-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07335 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "90"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07335-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07335 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101630"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07335-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07335 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "4.500000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07335-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07335 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "54320"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07434-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07434 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "287.250000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07434-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07434 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "91"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07434-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07434 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101700"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07434-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07434 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "2.400000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07434-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07434 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "14780"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07460-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07460 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "290.650000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07460-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07460 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "68"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07460-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07460 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101690"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07460-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07460 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "3.800000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07460-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07460 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "39580"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07471-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07471 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "288.350000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07471-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07471 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "72"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07471-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07471 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07471-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07471 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "4.700000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07471-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07471 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "20000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07481-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07481 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "291.550000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07481-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07481 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "70"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07481-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07481 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101900"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07481-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07481 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "4.400000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07481-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07481 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "70000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07510-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07510 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "287.550000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07510-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07510 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "98"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07510-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07510 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101760"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07510-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07510 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "2.200000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07510-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07510 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "4660"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07535-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07535 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "289.150000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07535-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07535 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "81"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07535-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07535 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101780"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07535-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07535 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "1.400000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07535-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07535 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "20000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07558-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07558 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "288.050000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07558-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07558 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "79"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07558-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07558 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101790"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07558-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07558 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "5.800000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07558-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07558 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "20000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07577-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07577 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "289.850000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07577-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07577 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "98"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07577-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07577 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101990"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07577-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07577 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "1.300000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07577-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07577 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "15390"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07591-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07591 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "289.250000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07591-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07591 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "66"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07591-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07591 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07591-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07591 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "4.000000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07591-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07591 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07607-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07607 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "287.950000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07607-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07607 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "95"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07607-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07607 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101790"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07607-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07607 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "3.000000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07607-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07607 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "19780"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07621-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07621 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "288.350000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07621-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07621 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "96"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07621-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07621 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101770"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07621-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07621 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "1.600000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07621-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07621 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "6650"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07627-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07627 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "288.950000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07627-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07627 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "85"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07627-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07627 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101740"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07627-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07627 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "1.800000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07627-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07627 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "20000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07630-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07630 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "290.450000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07630-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07630 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "86"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07630-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07630 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101750"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07630-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07630 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "2.700000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07630-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07630 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "18920"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07643-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07643 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "293.650000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07643-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07643 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "93"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07643-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07643 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101920"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07643-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07643 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "4.600000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07643-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07643 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "19130"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07650-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07650 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "294.550000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07650-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07650 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "72"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07650-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07650 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101980"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07650-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07650 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "3.900000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07650-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07650 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "35470"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07661-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07661 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07661-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07661 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07661-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07661 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07661-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07661 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "8.100000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07661-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07661 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07690-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07690 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "291.050000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07690-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07690 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "86"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07690-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07690 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "102240"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07690-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07690 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "1.300000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07690-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07690 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "30000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07747-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07747 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "289.450000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07747-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07747 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "91"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07747-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07747 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101770"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07747-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07747 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "0.500000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07747-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07747 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "19800"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07761-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07761 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "290.450000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07761-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07761 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "92"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07761-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07761 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "102290"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07761-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07761 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "4.300000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07761-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07761 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "1800"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/07790-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07790 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "291.550000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/07790-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07790 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "95"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/07790-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07790 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "102230"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/07790-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07790 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "0.500000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/07790-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_07790 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "28680"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/61968-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61968 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/61968-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61968 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "63"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/61968-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61968 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101260"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/61968-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61968 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "2.700000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/61968-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61968 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/61970-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61970 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "304.750000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/61970-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61970 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "60"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/61970-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61970 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101360"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/61970-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61970 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "3.800000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/61970-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61970 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/61972-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61972 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "299.750000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/61972-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61972 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "70"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/61972-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61972 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101400"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/61972-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61972 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "1.200000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/61972-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61972 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/61976-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61976 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "302.250000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/61976-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61976 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "71"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/61976-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61976 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101450"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/61976-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61976 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "7.400000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/61976-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61976 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/61980-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61980 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "301.650000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/61980-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61980 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "66"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/61980-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61980 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101680"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/61980-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61980 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "8.700000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/61980-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61980 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "44920"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/61996-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61996 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "288.750000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/61996-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61996 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "75"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/61996-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61996 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "102130"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/61996-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61996 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "11.800000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/61996-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61996 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/61997-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61997 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "277.150000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/61997-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61997 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "71"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/61997-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61997 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "100370"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/61997-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61997 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "8.100000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/61997-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61997 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/61998-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61998 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "280.850000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/61998-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61998 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "39"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/61998-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61998 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "99340"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/61998-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61998 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "10.800000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/61998-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_61998 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/67005-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_67005 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "303.650000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/67005-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_67005 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "64"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/67005-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_67005 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101350"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/67005-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_67005 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "3.500000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/67005-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_67005 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "20000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/71805-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_71805 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "287.850000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/71805-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_71805 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "100"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/71805-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_71805 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "100230"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/71805-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_71805 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "10.200000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/71805-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_71805 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "910"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/78890-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_78890 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "302.350000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/78890-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_78890 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "86"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/78890-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_78890 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101300"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/78890-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_78890 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "8.100000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/78890-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_78890 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/78897-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_78897 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "299.450000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/78897-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_78897 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "85"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/78897-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_78897 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101320"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/78897-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_78897 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "1.700000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/78897-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_78897 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/78925-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_78925 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "300.750000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/78925-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_78925 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "79"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/78925-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_78925 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101270"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/78925-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_78925 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "2.100000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/78925-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_78925 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "20220"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/81405-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_81405 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "299.850000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/81405-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_81405 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "88"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/81405-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_81405 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101010"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/81405-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_81405 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "2.100000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/81405-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_81405 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "58550"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/81408-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_81408 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "297.450000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/81408-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_81408 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "97"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/81408-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_81408 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "100990"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/81408-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_81408 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "0.000000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/81408-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_81408 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/81415-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_81415 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "297.050000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/81415-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_81415 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "94"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/81415-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_81415 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "101100"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/81415-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_81415 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "0.700000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/81415-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_81415 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/temperature/89642-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_89642 ;
+        sosa:observedProperty      ex:Temperature ;
+        sosa:hasSimpleResult       "258.950000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/humidity/89642-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_89642 ;
+        sosa:observedProperty      ex:Humidity ;
+        sosa:hasSimpleResult       "53"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/Pressure/89642-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_89642 ;
+        sosa:observedProperty      ex:Pressure ;
+        sosa:hasSimpleResult       "100900"^^xsd:int ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/windSpeed/89642-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_89642 ;
+        sosa:observedProperty      ex:WindSpeed ;
+        sosa:hasSimpleResult       "7.200000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .
+
+<http://example.org/observation/horizontalVisibility/89642-20241025090000>
+        rdf:type                   sosa:Observation ;
+        sosa:hasFeatureOfInterest  ex:omm_station_89642 ;
+        sosa:observedProperty      ex:horizontalVisibility ;
+        sosa:hasSimpleResult       "25000"^^xsd:float ;
+        sosa:resultTime            "2024-10-25T09:00:00"^^xsd:dateTime .

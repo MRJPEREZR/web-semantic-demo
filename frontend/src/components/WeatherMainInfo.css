@@ -1,0 +1,15 @@
+.weather-main-info {
+    text-align: center;
+    color: #333;
+  }
+  
+  .weather-main-info h2 {
+    font-size: 48px;
+    margin: 0;
+  }
+  
+  .weather-main-info p {
+    font-size: 18px;
+    color: #666;
+  }
+  

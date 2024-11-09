@@ -1,0 +1,21 @@
+.weather-details {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .detail-item {
+    text-align: center;
+  }
+  
+  .detail-item .label {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .detail-item .value {
+    font-size: 18px;
+    color: #333;
+  }
+  
