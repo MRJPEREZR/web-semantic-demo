@@ -1,10 +1,49 @@
 .weather-page {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.selection-container {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.attributes-checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.weather-data {
+  text-align: center;
+}
+
+.raw-response {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%; /* Ensure it takes up the full width */
+}
+
+.raw-response textarea {
+  width: 100%; /* Fill the available width */
+  max-width: 100%; /* Ensure it doesn't exceed the width of the parent */
+  padding: 10px;
+  font-family: monospace;
+  font-size: 14px;
+  color: #333;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical; /* Allows the user to resize vertically */
+  box-sizing: border-box; /* Ensures padding is included in the width calculation */
+}
