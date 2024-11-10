@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import './WeatherPage.css';
 
@@ -134,6 +135,9 @@ function WeatherPage() {
     }
   };
 
+  // redirects to the new TextSubmitPage
+  const navigate = useNavigate();
+
   return (
     <div className="weather-page">
       <Header />
@@ -207,6 +211,10 @@ function WeatherPage() {
         <h3>Raw Response</h3>
         <textarea readOnly value={rawResponse} rows={10} cols={50} />
       </div>
+
+      {/* New button to navigate to TextSubmitPage */}
+      <button onClick={() => navigate('/text-submit')}>Go to Text Submission</button>
+
     </div>
   );
 }
