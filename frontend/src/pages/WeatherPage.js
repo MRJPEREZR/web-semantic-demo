@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import './WeatherPage.css';
@@ -83,6 +83,7 @@ function WeatherPage() {
   const [weatherData, setWeatherData] = useState(null);
   const [rawResponse, setRawResponse] = useState(''); // New state for raw response string
   const [loading, setLoading] = useState(false);
+  const responseTextareaRef = useRef(null);
 
   // Handle selection of station
   const handleStationChange = (e) => {
@@ -134,6 +135,19 @@ function WeatherPage() {
       setLoading(false);
     }
   };
+
+    // Function to adjust the height of the textarea based on content
+    const adjustTextareaHeight = () => {
+      if (responseTextareaRef.current) {
+        responseTextareaRef.current.style.height = 'auto'; // Reset height
+        responseTextareaRef.current.style.height = `${responseTextareaRef.current.scrollHeight}px`; // Set to content height
+      }
+    };
+  
+    // Adjust height whenever apiResponse changes
+    useEffect(() => {
+      adjustTextareaHeight();
+    }, [rawResponse]);
 
   // redirects to the new TextSubmitPage
   const navigate = useNavigate();
@@ -192,9 +206,21 @@ function WeatherPage() {
                 // Get the result value or "N/A" if not available
                 const resultValue = attributeData ? attributeData.result.value : 'N/A';
 
+                // Define the unit for each attribute
+                const attributeUnits = {
+                  Temperature: 'K',  // Kelvin
+                  Humidity: '%',     // Percentage
+                  Pressure: "Pa",    // Pressure
+                  WindSpeed: 'm/s',  // meters per second
+                  // Add other attributes and their units here
+                };
+
+                // Get the unit for the current attribute
+                const unit = attributeUnits[attribute] || ''; // Default to no unit if not found
+
                 return (
                   <li key={attribute}>
-                    {attributesList.find((attr) => attr.key === attribute)?.label}: {resultValue}
+                    {attributesList.find((attr) => attr.key === attribute)?.label}: {resultValue} {unit}
                   </li>
                 );
               })}
@@ -205,15 +231,17 @@ function WeatherPage() {
         )}
       </div>
 
-
       {/* Raw Response Text Box */}
       <div className="raw-response">
         <h3>Raw Response</h3>
-        <textarea readOnly value={rawResponse} rows={10} cols={50} />
+        <textarea readOnly 
+        ref={responseTextareaRef}
+        style={{ overflow: 'hidden' }}
+        value={rawResponse} />
       </div>
 
       {/* New button to navigate to TextSubmitPage */}
-      <button onClick={() => navigate('/text-submit')}>Go to Text Submission</button>
+      <button onClick={() => navigate('/text-submit')}>Go to Custom Sparql Query Submission</button>
 
     </div>
   );
