@@ -172,7 +172,6 @@ function WeatherPage() {
         </button>
       </div>
 
-      {/* Display Weather Data */}
       <div className="weather-data">
         {loading ? (
           <p>Loading...</p>
@@ -180,17 +179,28 @@ function WeatherPage() {
           <>
             <h2>Weather Data for {stations.find((s) => s.id === selectedStation)?.name}</h2>
             <ul>
-              {selectedAttributes.map((attribute) => (
-                <li key={attribute}>
-                  {attributesList.find((attr) => attr.key === attribute)?.label}: {weatherData[attribute] ?? 'N/A'}
-                </li>
-              ))}
+              {selectedAttributes.map((attribute) => {
+                // Find the specific weather data for this attribute
+                const attributeData = weatherData.results.bindings.find(
+                  (binding) => binding.observedProperty.value.endsWith(attribute)
+                );
+
+                // Get the result value or "N/A" if not available
+                const resultValue = attributeData ? attributeData.result.value : 'N/A';
+
+                return (
+                  <li key={attribute}>
+                    {attributesList.find((attr) => attr.key === attribute)?.label}: {resultValue}
+                  </li>
+                );
+              })}
             </ul>
           </>
         ) : (
           <p style={{ color: '#666' }}>Select a station and attributes to view weather data.</p>
         )}
       </div>
+
 
       {/* Raw Response Text Box */}
       <div className="raw-response">

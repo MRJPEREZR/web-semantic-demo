@@ -128,7 +128,7 @@ public class SparqlController {
                                     sosa:observedProperty ?observedProperty ;
                                     sosa:hasSimpleResult ?result ;
                                     sosa:resultTime ?resultTime .
-                        FILTER (?observedProperty = ex:%s || ?observedProperty = ex:%s ?observedProperty = ex:%s || ?observedProperty = ex:%s)
+                        FILTER (?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s)
                         }
                         ORDER BY ?resultTime
                 """.formatted(stationId, attributes.get(0), attributes.get(1), attributes.get(2), attributes.get(3));
@@ -145,7 +145,7 @@ public class SparqlController {
                                     sosa:observedProperty ?observedProperty ;
                                     sosa:hasSimpleResult ?result ;
                                     sosa:resultTime ?resultTime .
-                        FILTER (?observedProperty = ex:%s || ?observedProperty = ex:%s ?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s)
+                        FILTER (?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s)
                         }
                         ORDER BY ?resultTime
                 """.formatted(stationId, attributes.get(0), attributes.get(1), stationId, attributes.get(2), attributes.get(3), attributes.get(4));
