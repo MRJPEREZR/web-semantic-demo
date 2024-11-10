@@ -1,6 +1,7 @@
 package com.wdws.finalProject.controllers;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.wdws.finalProject.models.BodyCustomQuery;
 import com.wdws.finalProject.models.BodyRequest;
 
 @RestController
@@ -32,33 +34,48 @@ public class SparqlController {
             List<String> attributes = body.getAttributes();
 
             String queryString = constructQuery(stationId, attributes);
+            return fusekiQuery(queryString);
             
-            // Create the SPARQL query object
-            Query query = QueryFactory.create(queryString);
-
-            // Use QueryExecutionHTTP to create a connection to the Fuseki server
-            try (QueryExecution qexec = QueryExecutionHTTP.service(FUSEKI_URL).query(query).build()) {
-                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-
-                if (query.isSelectType()) {
-                    ResultSet results = qexec.execSelect();
-                    ResultSetFormatter.outputAsJSON(outputStream, results);
-                } else if (query.isAskType()) {
-                    boolean result = qexec.execAsk();
-                    outputStream.write(("{\"boolean\": " + result + "}").getBytes(StandardCharsets.UTF_8));
-                } else if (query.isConstructType()) {
-                    Model model = qexec.execConstruct();
-                    RDFDataMgr.write(outputStream, model, org.apache.jena.riot.Lang.JSONLD);
-                } else if (query.isDescribeType()) {
-                    Model model = qexec.execDescribe();
-                    RDFDataMgr.write(outputStream, model, org.apache.jena.riot.Lang.JSONLD);
-                }
-
-                return outputStream.toString(StandardCharsets.UTF_8);
-            }
         } catch (Exception e) {
             e.printStackTrace();
             return "{\"error\": \"An error occurred while processing the SPARQL query.\"}";
+        }
+    }
+
+    @PostMapping(value = "/customQuery", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String executeSparqlUserQuery(@RequestBody BodyCustomQuery body) {
+        try {
+            String inputQuery = body.getUserQuery();
+            return fusekiQuery(inputQuery);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "{\"error\": \"An error occurred while processing the SPARQL query.\"}";
+        }
+    }
+
+    public static String fusekiQuery (String queryString) throws IOException {
+        // Create the SPARQL query object
+        Query query = QueryFactory.create(queryString);
+
+        // Use QueryExecutionHTTP to create a connection to the Fuseki server
+        try (QueryExecution qexec = QueryExecutionHTTP.service(FUSEKI_URL).query(query).build()) {
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+
+            if (query.isSelectType()) {
+                ResultSet results = qexec.execSelect();
+                ResultSetFormatter.outputAsJSON(outputStream, results);
+            } else if (query.isAskType()) {
+                boolean result = qexec.execAsk();
+                outputStream.write(("{\"boolean\": " + result + "}").getBytes(StandardCharsets.UTF_8));
+            } else if (query.isConstructType()) {
+                Model model = qexec.execConstruct();
+                RDFDataMgr.write(outputStream, model, org.apache.jena.riot.Lang.JSONLD);
+            } else if (query.isDescribeType()) {
+                Model model = qexec.execDescribe();
+                RDFDataMgr.write(outputStream, model, org.apache.jena.riot.Lang.JSONLD);
+            }
+
+            return outputStream.toString(StandardCharsets.UTF_8);
         }
     }
 
