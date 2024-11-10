@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './TextSubmitPage.css';
 
 function TextSubmitPage() {
-  const [inputText, setInputText] = useState('');
+  const defaultText = "PREFIX ex:<http://example.org/station/> \nPREFIX sosa:<http://www.w3.org/ns/sosa/>\nSELECT ?observedProperty ?result ?resultTime\nFROM<http://example.org/dataset>\nWHERE{ ?observation a sosa:Observation ; sosa:hasFeatureOfInterest ex:omm_station_07005 ; sosa:observedProperty ?observedProperty ; sosa:hasSimpleResult ?result ; sosa:resultTime ?resultTime FILTER ( ( ?observedProperty = ex:Temperature ) || ( ?observedProperty = ex:Humidity ) ) } ORDER BY ?resultTime";
+  const [inputText, setInputText] = useState(defaultText);
   const [apiResponse, setApiResponse] = useState('');
   const navigate = useNavigate();
   const responseTextareaRef = useRef(null);
@@ -46,7 +47,7 @@ function TextSubmitPage() {
       <textarea
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
-        placeholder="SELECT ?s ?o ?p FROM<http://example.org/dataset> WHERE{ ?s ?o ?p} LIMIT 3"
+        placeholder="Enter your query here"
         rows={5}
       />
       
@@ -55,7 +56,11 @@ function TextSubmitPage() {
       {/* Display API Response */}
       <div className="api-response">
         <h3>Jena Fuseki API Response</h3>
-        <textarea readOnly value={apiResponse} rows={10} />
+        <textarea readOnly
+            ref={responseTextareaRef}
+            value={apiResponse}
+            style={{ overflow: 'hidden' }}
+         />
       </div>
 
       {/* Back button */}
