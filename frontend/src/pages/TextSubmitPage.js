@@ -8,6 +8,7 @@ function TextSubmitPage() {
   const [apiResponse, setApiResponse] = useState('');
   const navigate = useNavigate();
   const responseTextareaRef = useRef(null);
+  const inputTextareaRef = useRef(null);
 
   const handleSubmit = async () => {
     try {
@@ -39,17 +40,32 @@ function TextSubmitPage() {
     adjustTextareaHeight();
   }, [apiResponse]);
 
+  // Adjust height for the input textarea
+  const adjustInputTextareaHeight = () => {
+    if (inputTextareaRef.current) {
+      inputTextareaRef.current.style.height = 'auto';
+      inputTextareaRef.current.style.height = `${inputTextareaRef.current.scrollHeight}px`;
+    }
+  };
+
+  // Adjust input textarea height whenever inputText changes
+  useEffect(() => {
+    adjustInputTextareaHeight();
+  }, [inputText]);
+
   return (
     <div className="text-submit-page" style={{ width: '100%' }}>
       <h2>Sparql Query to send</h2>
 
       {/* Text input area */}
       <textarea
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
-        placeholder="Enter your query here"
-        rows={5}
-      />
+          ref={inputTextareaRef}
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+          placeholder="Enter your query here"
+          rows={1}
+          style={{ overflow: 'hidden' }}
+        />
       
       <button onClick={handleSubmit}>Send query</button>
 
