@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './TextSubmitPage.css';
 
 function TextSubmitPage() {
-  const defaultText = "PREFIX ex:<http://example.org/station/> \nPREFIX sosa:<http://www.w3.org/ns/sosa/>\nSELECT ?observedProperty ?result ?resultTime\nFROM<http://example.org/dataset>\nWHERE{ ?observation a sosa:Observation ; sosa:hasFeatureOfInterest ex:omm_station_07005 ; sosa:observedProperty ?observedProperty ; sosa:hasSimpleResult ?result ; sosa:resultTime ?resultTime FILTER ( ( ?observedProperty = ex:Temperature ) || ( ?observedProperty = ex:Humidity ) ) } ORDER BY ?resultTime";
+  const defaultText = "PREFIX ex:<http://example.org/station/> \nPREFIX sosa:<http://www.w3.org/ns/sosa/> \nPREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\nSELECT ?observedProperty ?result ?resultTime\nFROM<http://example.org/dataset>\nWHERE{ ?observation a sosa:Observation ; sosa:hasFeatureOfInterest ex:omm_station_07005 ; sosa:observedProperty ?observedProperty ; sosa:hasSimpleResult ?result ; sosa:resultTime ?resultTime FILTER ( ( ?observedProperty = ex:Temperature ) && ( ?resultTime >= \"2024-10-25T00:00:00\"^^xsd:dateTime ) ) } ORDER BY ?resultTime";
   const [inputText, setInputText] = useState(defaultText);
   const [apiResponse, setApiResponse] = useState('');
   const navigate = useNavigate();
