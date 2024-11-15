@@ -93,10 +93,10 @@ function WeatherPage() {
 
   const formatDateToSPARQL = (date) => {
     const localDate = new Date(date);
-    // Set the time to 09:00:00 local time
-    localDate.setHours(9, 0, 0, 0);  // Set time to 09:00:00 and reset milliseconds
+    // Set the time to 00:00:00 local time
+    localDate.setHours(9, 0, 0, 0);  // Set time to 00:00:00 and reset milliseconds
     // Format to ISO string, but make sure it represents the correct local time
-    return localDate.toISOString().split('T')[0] + "T09:00:00";
+    return localDate.toISOString().split('T')[0] + "T00:00:00";
   };
 
   // Handle selection date
