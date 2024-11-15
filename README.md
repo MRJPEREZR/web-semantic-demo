@@ -140,7 +140,6 @@ This web app embed an Apache Jena Fuseki server, and run it in http://localhost:
 ### Endpoints
 
 1. `POST localhost:8080/sparql/customQuery`
-Body example:
 ```
 {
     "userQuery": "SELECT ?s ?o ?p FROM<http://example.org/dataset> WHERE{ ?s ?o ?p} LIMIT 1"
@@ -157,7 +156,7 @@ FROM<http://example.org/dataset>
 WHERE{ ?observation a sosa:Observation ; sosa:hasFeatureOfInterest ex:omm_station_07005 ; sosa:observedProperty ?observedProperty ; sosa:hasSimpleResult ?result ; sosa:resultTime ?resultTime FILTER ( ( ?observedProperty = ex:Temperature ) || ( ?observedProperty = ex:Humidity ) ) } ORDER BY ?resultTime"
 }
 ```
-2. `http://localhost:8080/sparql/query`
+2. `POST http://localhost:8080/sparql/query`
 ```
 {
     "stationId": "07005",
