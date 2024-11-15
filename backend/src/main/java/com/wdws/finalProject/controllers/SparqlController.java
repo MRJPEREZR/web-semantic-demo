@@ -25,15 +25,16 @@ import com.wdws.finalProject.models.BodyRequest;
 @RestController
 @RequestMapping("/sparql")
 public class SparqlController {
-    private static final String FUSEKI_URL = "http://localhost:3030/rdf-data/query";
+    private static final String FUSEKI_URL = "http://localhost:3030/rdf-data/";
 
-    @PostMapping(value = "/query", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/queryPerDay", produces = MediaType.APPLICATION_JSON_VALUE)
     public String executeSparqlQuery(@RequestBody BodyRequest body) {
         try {
             String stationId = "omm_station_" + body.getStationId();
             List<String> attributes = body.getAttributes();
+            String dateTime = body.getDateTime();
 
-            String queryString = constructQuery(stationId, attributes);
+            String queryString = constructQuery(stationId, attributes, dateTime);
             return fusekiQuery(queryString);
             
         } catch (Exception e) {
@@ -79,13 +80,14 @@ public class SparqlController {
         }
     }
 
-    public static String constructQuery(String stationId, List<String> attributes) {
+    public static String constructQuery(String stationId, List<String> attributes, String dateTime) {
         String sparqlQuery = "";
         switch (attributes.size()) {
             case 1:
                 sparqlQuery = """
                     PREFIX sosa: <http://www.w3.org/ns/sosa/>
                     PREFIX ex: <http://example.org/station/>
+                    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                     SELECT ?observedProperty ?result ?resultTime
                     FROM<http://example.org/dataset>
                     WHERE {
@@ -94,15 +96,16 @@ public class SparqlController {
                                     sosa:observedProperty ?observedProperty ;
                                     sosa:hasSimpleResult ?result ;
                                     sosa:resultTime ?resultTime .
-                        FILTER (?observedProperty = ex:%s)
+                        FILTER (?observedProperty = ex:%s && ?resultTime = "%s"^^xsd:dateTime)
                         }
                         ORDER BY ?resultTime
-                """.formatted(stationId, attributes.get(0));
+                """.formatted(stationId, attributes.get(0), dateTime);
                 break;
             case 2:
                 sparqlQuery = """
                     PREFIX sosa: <http://www.w3.org/ns/sosa/>
                     PREFIX ex: <http://example.org/station/>
+                    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                     SELECT ?observedProperty ?result ?resultTime
                     FROM<http://example.org/dataset>
                     WHERE {
@@ -111,15 +114,16 @@ public class SparqlController {
                                     sosa:observedProperty ?observedProperty ;
                                     sosa:hasSimpleResult ?result ;
                                     sosa:resultTime ?resultTime .
-                        FILTER (?observedProperty = ex:%s || ?observedProperty = ex:%s)
+                        FILTER ( ( ?observedProperty = ex:%s || ?observedProperty = ex:%s ) && ?resultTime = "%s"^^xsd:dateTime)
                         }
                         ORDER BY ?resultTime
-                """.formatted(stationId, attributes.get(0), attributes.get(1));
+                """.formatted(stationId, attributes.get(0), attributes.get(1), dateTime);
                 break;
             case 3:
                 sparqlQuery = """
                     PREFIX sosa: <http://www.w3.org/ns/sosa/>
                     PREFIX ex: <http://example.org/station/>
+                    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                     SELECT ?observedProperty ?result ?resultTime
                     FROM<http://example.org/dataset>
                     WHERE {
@@ -128,15 +132,16 @@ public class SparqlController {
                                     sosa:observedProperty ?observedProperty ;
                                     sosa:hasSimpleResult ?result ;
                                     sosa:resultTime ?resultTime .
-                        FILTER (?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s)
+                        FILTER ( ( ?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s ) && ?resultTime = "%s"^^xsd:dateTime)
                         }
                         ORDER BY ?resultTime
-                """.formatted(stationId, attributes.get(0), attributes.get(1), attributes.get(2));
+                """.formatted(stationId, attributes.get(0), attributes.get(1), attributes.get(2), dateTime);
                 break;
             case 4:
                 sparqlQuery = """
                     PREFIX sosa: <http://www.w3.org/ns/sosa/>
                     PREFIX ex: <http://example.org/station/>
+                    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                     SELECT ?observedProperty ?result ?resultTime
                     FROM<http://example.org/dataset>
                     WHERE {
@@ -145,15 +150,16 @@ public class SparqlController {
                                     sosa:observedProperty ?observedProperty ;
                                     sosa:hasSimpleResult ?result ;
                                     sosa:resultTime ?resultTime .
-                        FILTER (?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s)
+                        FILTER ( ( ?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s ) && ?resultTime = "%s"^^xsd:dateTime)
                         }
                         ORDER BY ?resultTime
-                """.formatted(stationId, attributes.get(0), attributes.get(1), attributes.get(2), attributes.get(3));
+                """.formatted(stationId, attributes.get(0), attributes.get(1), attributes.get(2), attributes.get(3), dateTime);
                 break;
             case 5:
                 sparqlQuery = """
                     PREFIX sosa: <http://www.w3.org/ns/sosa/>
                     PREFIX ex: <http://example.org/station/>
+                    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
                     SELECT ?observedProperty ?result ?resultTime
                     FROM<http://example.org/dataset>
                     WHERE {
@@ -162,10 +168,10 @@ public class SparqlController {
                                     sosa:observedProperty ?observedProperty ;
                                     sosa:hasSimpleResult ?result ;
                                     sosa:resultTime ?resultTime .
-                        FILTER (?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s)
+                        FILTER ( ( ?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s ) && ?resultTime = "%s"^^xsd:dateTime)
                         }
                         ORDER BY ?resultTime
-                """.formatted(stationId, attributes.get(0), attributes.get(1), stationId, attributes.get(2), attributes.get(3), attributes.get(4));
+                """.formatted(stationId, attributes.get(0), attributes.get(1), attributes.get(2), attributes.get(3), attributes.get(4), dateTime);
                 break;
             default:
                 break;

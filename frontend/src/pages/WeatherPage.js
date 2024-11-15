@@ -3,6 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import './WeatherPage.css';
 
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+
 // Sample station data for selection
 const stations = [
   { id: '07005', name: 'ABBEVILLE' },
@@ -85,6 +89,24 @@ function WeatherPage() {
   const [loading, setLoading] = useState(false);
   const responseTextareaRef = useRef(null);
 
+  const [selectedDate, setSelectedDate] = useState(null);
+
+  const formatDateToSPARQL = (date) => {
+    const localDate = new Date(date);
+    // Set the time to 09:00:00 local time
+    localDate.setHours(9, 0, 0, 0);  // Set time to 09:00:00 and reset milliseconds
+    // Format to ISO string, but make sure it represents the correct local time
+    return localDate.toISOString().split('T')[0] + "T09:00:00";
+  };
+
+  // Handle selection date
+  const handleDateChange = (date) => {
+    // Ensure the year is always 2024
+    const fixedYearDate = new Date(date);
+    fixedYearDate.setFullYear(2024);
+    setSelectedDate(fixedYearDate);
+  };
+
   // Handle selection of station
   const handleStationChange = (e) => {
     setSelectedStation(e.target.value);
@@ -105,13 +127,17 @@ function WeatherPage() {
     setWeatherData(null);
     setRawResponse(''); // Clear previous raw response
 
+    const formattedDate = formatDateToSPARQL(selectedDate);
+    console.log(formattedDate);
+
     const requestBody = {
       stationId: selectedStation,
-      attributes: selectedAttributes
+      attributes: selectedAttributes,
+      dateTime: formattedDate
     };
 
     try {
-      const response = await fetch('http://localhost:8080/sparql/query', {
+      const response = await fetch('http://localhost:8080/sparql/queryPerDay', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -184,8 +210,26 @@ function WeatherPage() {
           ))}
         </div>
 
+        {/* Date Picker */}
+        <div>
+        <label htmlFor="date">Select Date:</label>
+        <DatePicker
+          selected={selectedDate}
+          onChange={handleDateChange}
+          dateFormat="yy-MM-dd"
+          placeholderText="Select a date"
+          id="date"
+          showMonthDropdown
+          showDayPicker
+          dropdownMode="select"
+          renderCustomHeader={({ monthDate }) => {
+            return <span>Year: 2024</span>; // Force 2024 display
+          }}
+        />
+        </div>
+
         {/* Fetch Data Button */}
-        <button onClick={handleDataRequest} disabled={!selectedStation || selectedAttributes.length === 0}>
+        <button onClick={handleDataRequest} disabled={!selectedStation || selectedAttributes.length === 0 || !selectedDate}>
           Get Weather Data
         </button>
       </div>
