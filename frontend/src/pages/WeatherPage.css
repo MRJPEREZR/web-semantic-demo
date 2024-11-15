@@ -48,14 +48,25 @@ button {
   box-sizing: border-box; /* Ensures padding is included in the width calculation */
 }
 
-/* Date picker container */
+/* Change the text color of the date picker */
 .react-datepicker {
-  font-family: Arial, sans-serif;
-  border: 1px solid #ccc;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 10px;
+  color: black; /* Set default text color to black */
 }
+
+/* Change the text color of specific elements (e.g., dates) */
+.react-datepicker__day,
+.react-datepicker__month-text,
+.react-datepicker__current-month {
+  color: black; /* Ensures the day, month, and current month are black */
+}
+
+/* Highlighted selected date text color */
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  color: white; /* Selected date text color (contrast with background) */
+  background-color: black; /* Optional: Background for selected date */
+}
+
 
 /* Selected date cell */
 .react-datepicker__day--selected {
@@ -93,7 +104,7 @@ button {
 /* Calendar header */
 .react-datepicker__header {
   background-color: #4caf50;
-  color: white;
+  color: black;
   padding: 10px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
@@ -105,3 +116,7 @@ button {
   font-weight: bold;
 }
 
+/* Scoped styles for the custom calendar */
+.custom-calendar {
+  color: black; /* Set default text color */
+}

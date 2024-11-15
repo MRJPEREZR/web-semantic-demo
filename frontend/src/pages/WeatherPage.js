@@ -212,20 +212,41 @@ function WeatherPage() {
 
         {/* Date Picker */}
         <div>
-        <label htmlFor="date">Select Date:</label>
-        <DatePicker
-          selected={selectedDate}
-          onChange={handleDateChange}
-          dateFormat="yy-MM-dd"
-          placeholderText="Select a date"
-          id="date"
-          showMonthDropdown
-          showDayPicker
-          dropdownMode="select"
-          renderCustomHeader={({ monthDate }) => {
-            return <span>Year: 2024</span>; // Force 2024 display
-          }}
-        />
+          <label htmlFor="date">Select Date:</label>
+          <DatePicker
+            selected={selectedDate}
+            onChange={handleDateChange}
+            dateFormat="yy-MM-dd"
+            placeholderText="Select a date"
+            id="date-picker"
+            monthsShown={1}
+            showMonthDropdown
+            showYearDropdown
+            dropdownMode="select"
+            minDate={new Date(2024, 0, 1)} // Start from Jan 1, 2024
+            maxDate={new Date(2024, 11, 31)} // End at Dec 31, 2024
+            calendarClassName="scrollable-months"
+            renderCustomHeader={({ date, changeYear, changeMonth, monthDate }) => (
+              <div className="custom-header">
+                {/* Dropdown for Months */}
+                <select
+                  value={new Date(date).getMonth()}
+                  onChange={(e) => changeMonth(Number(e.target.value))}
+                >
+                  {Array.from({ length: 12 }, (_, i) => (
+                    <option key={i} value={i}>
+                      {new Date(0, i).toLocaleString('default', { month: 'long' })}
+                    </option>
+                  ))}
+                </select>
+
+                {/* Dropdown for Years */}
+                <select value={new Date(date).getFullYear()} onChange={(e) => changeYear(Number(e.target.value))}>
+                  <option value={2024}>2024</option>
+                </select>
+              </div>
+            )}
+          />
         </div>
 
         {/* Fetch Data Button */}
