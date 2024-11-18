@@ -268,8 +268,10 @@ function WeatherPage() {
                   (binding) => binding.observedProperty.value.endsWith(attribute)
                 );
 
-                // Get the result value or "N/A" if not available
-                const resultValue = attributeData ? attributeData.result.value : 'N/A';
+                // Get the result values or "N/A" if not available
+                const resultAverage = attributeData ? attributeData.average.value : 'N/A';
+                const resultMin = attributeData ? attributeData.min.value : 'N/A';
+                const resultMax = attributeData ? attributeData.max.value : 'N/A';
 
                 // Define the unit for each attribute
                 const attributeUnits = {
@@ -285,7 +287,7 @@ function WeatherPage() {
 
                 return (
                   <li key={attribute}>
-                    {attributesList.find((attr) => attr.key === attribute)?.label}: {resultValue} {unit}
+                    {attributesList.find((attr) => attr.key === attribute)?.label}: average {resultAverage} {unit}, min {resultMin} {unit}, max {resultMax} {unit} 
                   </li>
                 );
               })}
