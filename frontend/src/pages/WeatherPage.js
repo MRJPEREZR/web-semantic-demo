@@ -267,18 +267,42 @@ function WeatherPage() {
                 const attributeData = weatherData.results.bindings.find(
                   (binding) => binding.observedProperty.value.endsWith(attribute)
                 );
-
+                
                 // Get the result values or "N/A" if not available
-                const resultAverage = attributeData ? attributeData.average.value : 'N/A';
-                const resultMin = attributeData ? attributeData.min.value : 'N/A';
-                const resultMax = attributeData ? attributeData.max.value : 'N/A';
+                const transformValue = (attribute, value) => {
+                  if (value === undefined || value === null) return 'N/A';
+              
+                  if (attribute === 'Temperature') {
+                      return (value - 273.15).toFixed(2);
+                      
+                  }
+              
+                  if (attribute === 'Pressure') {
+                      return (value / 1000).toFixed(2); // Convert to kilopascals
+                  }
+
+                  if (attribute === 'WindSpeed') {
+                    return (value * 3.6).toFixed(2); // Convert to km/h
+                }
+              
+                  return parseFloat(value).toFixed(2); // Default case for other attributes
+                };
+                // Helper function to get the result value
+                const getResultValue = (attribute, data, type) => {
+                  if (!data) return 'N/A';
+                  const value = data[type]?.value;
+                  return transformValue(attribute, value);
+                };
+                const resultAverage = getResultValue(attribute, attributeData, 'average');
+                const resultMin = getResultValue(attribute, attributeData, 'min');
+                const resultMax = getResultValue(attribute, attributeData, 'max');
 
                 // Define the unit for each attribute
                 const attributeUnits = {
-                  Temperature: 'K',  // Kelvin
+                  Temperature: "°C",  // Celsius
                   Humidity: '%',     // Percentage
-                  Pressure: "Pa",    // Pressure
-                  WindSpeed: 'm/s',  // meters per second
+                  Pressure: "kPa",    // kilo Pascales
+                  WindSpeed: 'km/h',  // kilometers per hour
                   // Add other attributes and their units here
                 };
 
