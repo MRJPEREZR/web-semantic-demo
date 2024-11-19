@@ -30,7 +30,7 @@ public class SparqlController {
     private static final String FUSEKI_URL = "http://localhost:3030/rdf-data/";
 
     @PostMapping(value = "/queryPerDay", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String executeSparqlQuery(@RequestBody BodyRequest body) {
+    public String queryPerDay(@RequestBody BodyRequest body) {
         try {
             String stationId = "omm_station_" + body.getStationId();
             List<String> attributes = body.getAttributes();
