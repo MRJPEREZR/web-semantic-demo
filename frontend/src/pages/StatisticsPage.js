@@ -24,38 +24,13 @@ function StatisticsPage() {
       lowestDay: "22/01/24",
     });
   
-    // useEffect est commenté car nous n'appelons pas l'API pour l'instant
-    // useEffect(() => {
-    //   if (city && month !== null) {
-    //     fetchWeatherData(city, month);
-    //   }
-    // }, [city, month]);
-  
-    // Fonction de récupération des données météo commentée
-    // const fetchWeatherData = async (city, month) => {
-    //   try {
-    //     const response = await axios.get(
-    //       `https://api.openweathermap.org/data/2.5/forecast`,
-    //       {
-    //         params: {
-    //           q: city,
-    //           appid: API_KEY,
-    //           units: "metric",
-    //           cnt: 40,  // Nombre de prévisions à récupérer (toutes les 3 heures)
-    //         },
-    //       }
-    //     );
-    //     // Traitement des données de l'API commenté
-    //   } catch (error) {
-    //     console.error("Erreur de récupération des données météo:", error);
-    //   }
-    // };
+
   
     return (
       <div className="App">
          <div className="selector">
           <div>
-            <label >Choisir la ville:</label>
+            <label >Choose a station:</label>
             <select value={city} onChange={(e) => setCity(e.target.value)}>
               {cities.map((cityName) => (
                 <option key={cityName} value={cityName}>
@@ -66,7 +41,7 @@ function StatisticsPage() {
           </div>
   
           <div>
-            <label>Choisir le mois:</label>
+            <label>Choose the month:</label>
             <select value={month} onChange={(e) => setMonth(Number(e.target.value))}>
               {months.map((monthName, index) => (
                 <option key={index} value={index}>
@@ -76,28 +51,28 @@ function StatisticsPage() {
             </select>
           </div>
         </div>
-        <h1>Météo pour {city}</h1>
+        <h1>Weather forecast for {city} station</h1>
   
        
   
         {/* Affichage des résultats avec des valeurs statiques */}
         <div className="result">
             <div className="col">
-                <h2>Température la plus haute du mois</h2>
+                <h2>Highest temperature of the month</h2>
                 <div className='result2'>
                     <div className="col2"><p className='p1'>{weatherData.highestTemp}°C</p> 
                       {/*<FaSun size={50} color="#ffcc00" />*/}
                     </div>
-                    <div className="col2"><p>le {weatherData.highestDay}</p></div>
+                    <div className="col2"><p> {weatherData.highestDay}</p></div>
                  
                 </div>
                 
             </div>
             <div className="col">
-              <h2>Température la plus basse du mois</h2>
+              <h2>Lowest temperature of the month</h2>
               <div className='result2'>
                 <div className='col2'><p className='p2'>{weatherData.lowestTemp}°C</p></div>
-                <div className='col2'> <p>le {weatherData.lowestDay}</p></div>
+                <div className='col2'> <p> {weatherData.lowestDay}</p></div>
               </div>
                 
                  
