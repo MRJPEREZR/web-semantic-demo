@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.wdws.finalProject.models.BodyRequest;
+import com.wdws.finalProject.models.SortRequestBody;
 
 // still developping 
 @RestController
@@ -45,6 +46,84 @@ public class NewEndpoints {
         }
     }
 
+    @PostMapping(value = "/querySortedBy", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String sortValues(@RequestBody SortRequestBody body) {
+        try {
+            String type = body.getType();
+            int lenght = body.getLenght();
+            String attribute = body.getAttribute();
+
+            String queryToSort = constructQueryToSort(type, lenght, attribute);
+            return fusekiQuery(queryToSort);
+            } catch (Exception e) {
+                e.printStackTrace();
+                return "{\"error\": \"An error occurred while processing the SPARQL query.\"}";            
+            }
+        }
+            
+    public static String constructQueryToSort(String type, int lenght, String attribute) {
+        String query = "";
+        switch (type.toLowerCase()) {
+            case "ascend":
+                query = """
+                    PREFIX ex:<http://example.org/station/> 
+                    PREFIX sosa:<http://www.w3.org/ns/sosa/> 
+                    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                    SELECT 
+                        ?observedProperty
+                        ?month
+                        (AVG(?result) AS ?average) 
+                        (MIN(?result) AS ?min) 
+                        (MAX(?result) AS ?max)
+                    FROM <http://example.org/dataset>
+                    WHERE {
+                        ?observation a sosa:Observation ;
+                                sosa:observedProperty ?observedProperty ;
+                                sosa:hasSimpleResult ?result ;
+                                sosa:resultTime ?resultTime .
+                        FILTER (
+                            (?observedProperty = ex:%s)
+                        )
+                        BIND(SUBSTR(STR(?resultTime), 1, 7) AS ?month)
+                    }
+                    GROUP BY ?observedProperty ?month
+                    ORDER BY ASC(?average)
+                    LIMIT %d
+                    """.formatted(attribute, lenght);
+                break;
+            case "descend":
+                query = """
+                    PREFIX ex:<http://example.org/station/> 
+                    PREFIX sosa:<http://www.w3.org/ns/sosa/> 
+                    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                    SELECT 
+                        ?observedProperty
+                        ?month
+                        (AVG(?result) AS ?average) 
+                        (MIN(?result) AS ?min) 
+                        (MAX(?result) AS ?max)
+                    FROM <http://example.org/dataset>
+                    WHERE {
+                        ?observation a sosa:Observation ;
+                                sosa:observedProperty ?observedProperty ;
+                                sosa:hasSimpleResult ?result ;
+                                sosa:resultTime ?resultTime .
+                        FILTER (
+                            (?observedProperty = ex:%s)
+                        )
+                        BIND(SUBSTR(STR(?resultTime), 1, 7) AS ?month)
+                    }
+                    GROUP BY ?observedProperty ?month
+                    ORDER BY DESC(?average)
+                    LIMIT %d
+                    """.formatted(attribute, lenght);
+                break;
+            default:
+                break;
+        }
+        return query;
+    }            
+            
     public static String constructQuery(String stationId, List<String> attributes, String dateTime) {
         String sparqlQuery = "";
         String nextMonthDate = getNextMonthDate(dateTime);

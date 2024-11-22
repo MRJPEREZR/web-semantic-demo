@@ -1,6 +1,7 @@
 package com.wdws.finalProject.models;
 
 public class SortRequestBody {
+    private String attribute;
     private String type;
     private int lenght;
 
@@ -18,6 +19,14 @@ public class SortRequestBody {
 
     public int getLenght() {
         return lenght;
+    }
+
+    public void setAtrribute (String attribute) {
+        this.attribute = attribute;
+    }
+
+    public String getAttribute () {
+        return attribute;
     }
     
 }
