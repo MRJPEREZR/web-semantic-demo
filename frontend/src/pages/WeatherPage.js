@@ -185,7 +185,7 @@ function WeatherPage() {
         </div>
 
         {/* Fetch Data Button */}
-        <button onClick={handleDataRequest} disabled={!selectedStation || selectedAttributes.length === 0}>
+        <button  onClick={handleDataRequest} disabled={!selectedStation || selectedAttributes.length === 0}>
           Get Weather Data
         </button>
       </div>
@@ -236,7 +236,10 @@ function WeatherPage() {
         <h3>Raw Response</h3>
         <textarea readOnly 
         ref={responseTextareaRef}
-        style={{ overflow: 'hidden' }}
+        style={{  overflow: 'hidden',
+        borderRadius: '20px',
+        border: '3px solid #4682B4', 
+        padding: '10px'  }}
         value={rawResponse} />
       </div>
 
