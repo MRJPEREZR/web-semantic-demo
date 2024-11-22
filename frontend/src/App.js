@@ -11,6 +11,7 @@ function App() {
         <Route path="/" element={<WeatherPage />} />
         <Route path="/text-submit" element={<TextSubmitPage />} />
         <Route path="/Statistics" element={<StatisticsPage/>}/>
+        
       </Routes>
     </Router>
   );

@@ -1,10 +1,8 @@
 
 import './StatisticsPage.css';
-import React, { useState, useEffect } from "react";
-//import axios from "axios";
-import { FaSun, FaCloud, FaSnowflake } from "react-icons/fa";
-
-//const API_KEY = "YOUR_API_KEY";  // Remplace par ta clé API OpenWeatherMap ou WeatherStack
+import React, { useState } from "react";
+import { FaTemperatureHigh, FaWind, FaPercentage, FaCloudRain } from 'react-icons/fa';
+import Bar from '../components/bar';
 
 const cities = [
   "Paris", "London", "New York", "Tokyo", "Sydney"
@@ -22,6 +20,7 @@ function StatisticsPage() {
       lowestTemp: 10,
       highestDay: "15/01/24",
       lowestDay: "22/01/24",
+      averageTemp: 22,
     });
   
 
@@ -56,13 +55,47 @@ function StatisticsPage() {
        
   
         {/* Affichage des résultats avec des valeurs statiques */}
+        <div className='result'>
+          <div className='col'><h2 >Average Statistics</h2>
+            <div className='result2'>
+              <div className='box' >
+                <div className="col2"><FaTemperatureHigh/><p >Temperature</p></div>
+                <h4 className='p3'>mean:</h4>
+                <Bar/>
+              </div> 
+              <div className='box'>
+                <div className="col2"><FaPercentage/><p>Humidity</p></div>
+                  <h4>mean:</h4>
+                  <Bar/>
+                
+              </div>
+              <div className='box'>
+                <div className="col2">
+                  <FaCloudRain/><p >Pressure</p>
+                </div>
+                <h4>mean:</h4>
+                <Bar/>
+              </div> 
+              <div className='box'>
+                <div className="col2">
+                  <FaWind/><p >Wind Speed</p>
+                </div>
+                <h4>mean:</h4>
+                <Bar/>
+              </div> 
+            </div>
+
+          </div>
+
+        </div>
+
+        {/*not use
         <div className="result">
             <div className="col">
                 <h2>Highest temperature of the month</h2>
                 <div className='result2'>
                     <div className="col2"><p className='p1'>{weatherData.highestTemp}°C</p> 
-                      {/*<FaSun size={50} color="#ffcc00" />*/}
-                    </div>
+                      
                     <div className="col2"><p> {weatherData.highestDay}</p></div>
                  
                 </div>
@@ -76,10 +109,11 @@ function StatisticsPage() {
               </div>
                 
                  
-                {/*<FaCloud size={50} color="#3498db" />*/}
+                
             </div>
 
         </div>
+      */}
           
           
       </div>
