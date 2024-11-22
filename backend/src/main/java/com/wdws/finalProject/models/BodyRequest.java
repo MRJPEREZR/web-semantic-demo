@@ -5,6 +5,7 @@ import java.util.List;
 public class BodyRequest {
     private String stationId;
     private List<String> attributes; 
+    private String dateTime;
 
     public void setStationId(String stationId) {
         this.stationId = stationId;
@@ -21,4 +22,14 @@ public class BodyRequest {
     public List<String> getAttributes () {
         return this.attributes;
     }
+
+    public void setDateTime (String dateTime) {
+        this.dateTime = dateTime;
+    }
+
+    public String getDateTime () {
+        return this.dateTime;
+    }
+
+
 }
