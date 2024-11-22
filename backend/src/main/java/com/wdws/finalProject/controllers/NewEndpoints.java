@@ -34,7 +34,7 @@ public class NewEndpoints {
         try {
             String stationId = "omm_station_" + body.getStationId();
             List<String> attributes = body.getAttributes();
-            String month = convertToUTC(body.getDateTime()); // expected the name of the month (january-2024, february-2024 ... december-2024)
+            String month = convertToUTC(body.getDateTime()); 
 
             String queryString = constructQuery(stationId, attributes, month);
             return fusekiQuery(queryString);
