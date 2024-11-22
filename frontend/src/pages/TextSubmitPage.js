@@ -64,7 +64,10 @@ function TextSubmitPage() {
           onChange={(e) => setInputText(e.target.value)}
           placeholder="Enter your query here"
           rows={1}
-          style={{ overflow: 'hidden' }}
+          style={{ overflow: 'hidden',
+          borderRadius: '20px',
+          border: '3px solid #4682B4', 
+          padding: '10px' }}
         />
       
       <button onClick={handleSubmit}>Send query</button>
@@ -75,7 +78,10 @@ function TextSubmitPage() {
         <textarea readOnly
             ref={responseTextareaRef}
             value={apiResponse}
-            style={{ overflow: 'hidden' }}
+            style={{ overflow: 'hidden',
+            borderRadius: '20px',
+            border: '3px solid #4682B4', 
+            padding: '10px' }}
          />
       </div>
 
