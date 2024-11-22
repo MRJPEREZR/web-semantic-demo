@@ -20,7 +20,7 @@ public class FinalProjectWsApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) {
-		String rdfFilePath = "src/main/resources/static/synop.202410.ttl";
+		String rdfFilePath = "src/main/resources/static/synop.2024.ttl";
 		Graph graph = RDFDataMgr.loadGraph(rdfFilePath);
 
 		DatasetGraph datasetGraph = DatasetGraphFactory.createTxnMem();
