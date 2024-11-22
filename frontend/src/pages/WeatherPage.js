@@ -3,6 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import './WeatherPage.css';
 
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+
 // Sample station data for selection
 const stations = [
   { id: '07005', name: 'ABBEVILLE' },
@@ -85,6 +89,24 @@ function WeatherPage() {
   const [loading, setLoading] = useState(false);
   const responseTextareaRef = useRef(null);
 
+  const [selectedDate, setSelectedDate] = useState(null);
+
+  const formatDateToSPARQL = (date) => {
+    const localDate = new Date(date);
+    // Set the time to 00:00:00 local time
+    localDate.setHours(9, 0, 0, 0);  // Set time to 00:00:00 and reset milliseconds
+    // Format to ISO string, but make sure it represents the correct local time
+    return localDate.toISOString().split('T')[0] + "T00:00:00";
+  };
+
+  // Handle selection date
+  const handleDateChange = (date) => {
+    // Ensure the year is always 2024
+    const fixedYearDate = new Date(date);
+    fixedYearDate.setFullYear(2024);
+    setSelectedDate(fixedYearDate);
+  };
+
   // Handle selection of station
   const handleStationChange = (e) => {
     setSelectedStation(e.target.value);
@@ -105,13 +127,17 @@ function WeatherPage() {
     setWeatherData(null);
     setRawResponse(''); // Clear previous raw response
 
+    const formattedDate = formatDateToSPARQL(selectedDate);
+    console.log(formattedDate);
+
     const requestBody = {
       stationId: selectedStation,
-      attributes: selectedAttributes
+      attributes: selectedAttributes,
+      dateTime: formattedDate
     };
 
     try {
-      const response = await fetch('http://localhost:8080/sparql/query', {
+      const response = await fetch('http://localhost:8080/sparql/queryPerDay', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -184,8 +210,49 @@ function WeatherPage() {
           ))}
         </div>
 
+        {/* Date Picker */}
+        <div>
+          <label htmlFor="date">Select Date:</label>
+          <DatePicker
+            selected={selectedDate}
+            onChange={handleDateChange}
+            dateFormat="yy-MM-dd"
+            placeholderText="Select a date"
+            id="date-picker"
+            monthsShown={1}
+            showMonthDropdown
+            showYearDropdown
+            dropdownMode="select"
+            minDate={new Date(2024, 0, 1)} // Start from Jan 1, 2024
+            maxDate={new Date(2024, 11, 31)} // End at Dec 31, 2024
+            calendarClassName="scrollable-months"
+            renderCustomHeader={({ date, changeYear, changeMonth, monthDate }) => (
+              <div className="custom-header">
+                {/* Dropdown for Months */}
+                <select
+                  value={new Date(date).getMonth()}
+                  onChange={(e) => changeMonth(Number(e.target.value))}
+                >
+                  {Array.from({ length: 12 }, (_, i) => (
+                    <option key={i} value={i}>
+                      {new Date(0, i).toLocaleString('default', { month: 'long' })}
+                    </option>
+                  ))}
+                </select>
+
+                {/* Dropdown for Years */}
+                <select value={new Date(date).getFullYear()} onChange={(e) => changeYear(Number(e.target.value))}>
+                  <option value={2024}>2024</option>
+                </select>
+              </div>
+            )}
+          />
+        </div>
+
         {/* Fetch Data Button */}
-        <button  onClick={handleDataRequest} disabled={!selectedStation || selectedAttributes.length === 0}>
+
+        <button onClick={handleDataRequest} disabled={!selectedStation || selectedAttributes.length === 0 || !selectedDate}>
+
           Get Weather Data
         </button>
       </div>
@@ -202,16 +269,42 @@ function WeatherPage() {
                 const attributeData = weatherData.results.bindings.find(
                   (binding) => binding.observedProperty.value.endsWith(attribute)
                 );
+                
+                // Get the result values or "N/A" if not available
+                const transformValue = (attribute, value) => {
+                  if (value === undefined || value === null) return 'N/A';
+              
+                  if (attribute === 'Temperature') {
+                      return (value - 273.15).toFixed(2);
+                      
+                  }
+              
+                  if (attribute === 'Pressure') {
+                      return (value / 1000).toFixed(2); // Convert to kilopascals
+                  }
 
-                // Get the result value or "N/A" if not available
-                const resultValue = attributeData ? attributeData.result.value : 'N/A';
+                  if (attribute === 'WindSpeed') {
+                    return (value * 3.6).toFixed(2); // Convert to km/h
+                }
+              
+                  return parseFloat(value).toFixed(2); // Default case for other attributes
+                };
+                // Helper function to get the result value
+                const getResultValue = (attribute, data, type) => {
+                  if (!data) return 'N/A';
+                  const value = data[type]?.value;
+                  return transformValue(attribute, value);
+                };
+                const resultAverage = getResultValue(attribute, attributeData, 'average');
+                const resultMin = getResultValue(attribute, attributeData, 'min');
+                const resultMax = getResultValue(attribute, attributeData, 'max');
 
                 // Define the unit for each attribute
                 const attributeUnits = {
-                  Temperature: 'K',  // Kelvin
+                  Temperature: "°C",  // Celsius
                   Humidity: '%',     // Percentage
-                  Pressure: "Pa",    // Pressure
-                  WindSpeed: 'm/s',  // meters per second
+                  Pressure: "kPa",    // kilo Pascales
+                  WindSpeed: 'km/h',  // kilometers per hour
                   // Add other attributes and their units here
                 };
 
@@ -220,7 +313,7 @@ function WeatherPage() {
 
                 return (
                   <li key={attribute}>
-                    {attributesList.find((attr) => attr.key === attribute)?.label}: {resultValue} {unit}
+                    {attributesList.find((attr) => attr.key === attribute)?.label}: average {resultAverage} {unit}, min {resultMin} {unit}, max {resultMax} {unit} 
                   </li>
                 );
               })}

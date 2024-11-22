@@ -3,6 +3,8 @@ package com.wdws.finalProject.controllers;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.apache.jena.query.Query;
@@ -25,15 +27,16 @@ import com.wdws.finalProject.models.BodyRequest;
 @RestController
 @RequestMapping("/sparql")
 public class SparqlController {
-    private static final String FUSEKI_URL = "http://localhost:3030/rdf-data/query";
+    private static final String FUSEKI_URL = "http://localhost:3030/rdf-data/";
 
-    @PostMapping(value = "/query", produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/queryPerDay", produces = MediaType.APPLICATION_JSON_VALUE)
     public String executeSparqlQuery(@RequestBody BodyRequest body) {
         try {
             String stationId = "omm_station_" + body.getStationId();
             List<String> attributes = body.getAttributes();
+            String dateTime = body.getDateTime();
 
-            String queryString = constructQuery(stationId, attributes);
+            String queryString = constructQuery(stationId, attributes, dateTime);
             return fusekiQuery(queryString);
             
         } catch (Exception e) {
@@ -79,97 +82,157 @@ public class SparqlController {
         }
     }
 
-    public static String constructQuery(String stationId, List<String> attributes) {
+    public static String constructQuery(String stationId, List<String> attributes, String dateTime) {
         String sparqlQuery = "";
+        String nextDayDate = getNextDayDate(dateTime);
         switch (attributes.size()) {
             case 1:
                 sparqlQuery = """
-                    PREFIX sosa: <http://www.w3.org/ns/sosa/>
-                    PREFIX ex: <http://example.org/station/>
-                    SELECT ?observedProperty ?result ?resultTime
-                    FROM<http://example.org/dataset>
+                    PREFIX ex:<http://example.org/station/> 
+                    PREFIX sosa:<http://www.w3.org/ns/sosa/> 
+                    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                    SELECT 
+                        ?observedProperty 
+                        (AVG(?result) AS ?average) 
+                        (MIN(?result) AS ?min) 
+                        (MAX(?result) AS ?max)
+                    FROM <http://example.org/dataset>
                     WHERE {
                         ?observation a sosa:Observation ;
                                     sosa:hasFeatureOfInterest ex:%s ;
                                     sosa:observedProperty ?observedProperty ;
                                     sosa:hasSimpleResult ?result ;
                                     sosa:resultTime ?resultTime .
-                        FILTER (?observedProperty = ex:%s)
-                        }
-                        ORDER BY ?resultTime
-                """.formatted(stationId, attributes.get(0));
+                        FILTER (
+                            (?observedProperty = ex:%s) && 
+                            (?resultTime >= "%s"^^xsd:dateTime) && 
+                            (?resultTime < "%s"^^xsd:dateTime)
+                        )
+                    }
+                    GROUP BY ?observedProperty
+                """.formatted(stationId, attributes.get(0), dateTime, nextDayDate);
                 break;
             case 2:
                 sparqlQuery = """
-                    PREFIX sosa: <http://www.w3.org/ns/sosa/>
-                    PREFIX ex: <http://example.org/station/>
-                    SELECT ?observedProperty ?result ?resultTime
-                    FROM<http://example.org/dataset>
+                    PREFIX ex:<http://example.org/station/> 
+                    PREFIX sosa:<http://www.w3.org/ns/sosa/> 
+                    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                    SELECT 
+                        ?observedProperty 
+                        (AVG(?result) AS ?average) 
+                        (MIN(?result) AS ?min) 
+                        (MAX(?result) AS ?max)
+                    FROM <http://example.org/dataset>
                     WHERE {
                         ?observation a sosa:Observation ;
                                     sosa:hasFeatureOfInterest ex:%s ;
                                     sosa:observedProperty ?observedProperty ;
                                     sosa:hasSimpleResult ?result ;
                                     sosa:resultTime ?resultTime .
-                        FILTER (?observedProperty = ex:%s || ?observedProperty = ex:%s)
-                        }
-                        ORDER BY ?resultTime
-                """.formatted(stationId, attributes.get(0), attributes.get(1));
+                        FILTER (
+                            (?observedProperty = ex:%s || ?observedProperty = ex:%s) && 
+                            (?resultTime >= "%s"^^xsd:dateTime) && 
+                            (?resultTime < "%s"^^xsd:dateTime)
+                        )
+                    }
+                    GROUP BY ?observedProperty
+                """.formatted(stationId, attributes.get(0), attributes.get(1), dateTime, nextDayDate);
                 break;
             case 3:
                 sparqlQuery = """
-                    PREFIX sosa: <http://www.w3.org/ns/sosa/>
-                    PREFIX ex: <http://example.org/station/>
-                    SELECT ?observedProperty ?result ?resultTime
-                    FROM<http://example.org/dataset>
+                    PREFIX ex:<http://example.org/station/> 
+                    PREFIX sosa:<http://www.w3.org/ns/sosa/> 
+                    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                    SELECT 
+                        ?observedProperty 
+                        (AVG(?result) AS ?average) 
+                        (MIN(?result) AS ?min) 
+                        (MAX(?result) AS ?max)
+                    FROM <http://example.org/dataset>
                     WHERE {
                         ?observation a sosa:Observation ;
                                     sosa:hasFeatureOfInterest ex:%s ;
                                     sosa:observedProperty ?observedProperty ;
                                     sosa:hasSimpleResult ?result ;
                                     sosa:resultTime ?resultTime .
-                        FILTER (?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s)
-                        }
-                        ORDER BY ?resultTime
-                """.formatted(stationId, attributes.get(0), attributes.get(1), attributes.get(2));
+                        FILTER (
+                            (?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s) && 
+                            (?resultTime >= "%s"^^xsd:dateTime) && 
+                            (?resultTime < "%s"^^xsd:dateTime)
+                        )
+                    }
+                    GROUP BY ?observedProperty
+                """.formatted(stationId, attributes.get(0), attributes.get(1), attributes.get(2), dateTime, nextDayDate);
                 break;
             case 4:
                 sparqlQuery = """
-                    PREFIX sosa: <http://www.w3.org/ns/sosa/>
-                    PREFIX ex: <http://example.org/station/>
-                    SELECT ?observedProperty ?result ?resultTime
-                    FROM<http://example.org/dataset>
+                    PREFIX ex:<http://example.org/station/> 
+                    PREFIX sosa:<http://www.w3.org/ns/sosa/> 
+                    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                    SELECT 
+                        ?observedProperty 
+                        (AVG(?result) AS ?average) 
+                        (MIN(?result) AS ?min) 
+                        (MAX(?result) AS ?max)
+                    FROM <http://example.org/dataset>
                     WHERE {
                         ?observation a sosa:Observation ;
                                     sosa:hasFeatureOfInterest ex:%s ;
                                     sosa:observedProperty ?observedProperty ;
                                     sosa:hasSimpleResult ?result ;
                                     sosa:resultTime ?resultTime .
-                        FILTER (?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s)
-                        }
-                        ORDER BY ?resultTime
-                """.formatted(stationId, attributes.get(0), attributes.get(1), attributes.get(2), attributes.get(3));
+                        FILTER (
+                            (?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s) && 
+                            (?resultTime >= "%s"^^xsd:dateTime) && 
+                            (?resultTime < "%s"^^xsd:dateTime)
+                        )
+                    }
+                    GROUP BY ?observedProperty
+                """.formatted(stationId, attributes.get(0), attributes.get(1), attributes.get(2), attributes.get(3), dateTime, nextDayDate);
                 break;
             case 5:
                 sparqlQuery = """
-                    PREFIX sosa: <http://www.w3.org/ns/sosa/>
-                    PREFIX ex: <http://example.org/station/>
-                    SELECT ?observedProperty ?result ?resultTime
-                    FROM<http://example.org/dataset>
+                    PREFIX ex:<http://example.org/station/> 
+                    PREFIX sosa:<http://www.w3.org/ns/sosa/> 
+                    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                    SELECT 
+                        ?observedProperty 
+                        (AVG(?result) AS ?average) 
+                        (MIN(?result) AS ?min) 
+                        (MAX(?result) AS ?max)
+                    FROM <http://example.org/dataset>
                     WHERE {
                         ?observation a sosa:Observation ;
                                     sosa:hasFeatureOfInterest ex:%s ;
                                     sosa:observedProperty ?observedProperty ;
                                     sosa:hasSimpleResult ?result ;
                                     sosa:resultTime ?resultTime .
-                        FILTER (?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s)
-                        }
-                        ORDER BY ?resultTime
-                """.formatted(stationId, attributes.get(0), attributes.get(1), stationId, attributes.get(2), attributes.get(3), attributes.get(4));
+                        FILTER (
+                            (?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s || ?observedProperty = ex:%s) && 
+                            (?resultTime >= "%s"^^xsd:dateTime) && 
+                            (?resultTime < "%s"^^xsd:dateTime)
+                        )
+                    }
+                    GROUP BY ?observedProperty
+                """.formatted(stationId, attributes.get(0), attributes.get(1), attributes.get(2), attributes.get(3), attributes.get(4), dateTime, nextDayDate);
                 break;
             default:
                 break;
         }
         return sparqlQuery;
+    }
+
+    public static String getNextDayDate (String dateTime) {
+        // Define the formatter to match the date format
+        DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
+
+        // Parse the string into a LocalDateTime object
+        LocalDateTime date = LocalDateTime.parse(dateTime, formatter);
+
+        // Add one day to the date
+        LocalDateTime nextDay = date.plusDays(1);
+
+        // Format the result back into a string
+        return nextDay.format(formatter);
     }
 }
