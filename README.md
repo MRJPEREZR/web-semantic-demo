@@ -156,11 +156,34 @@ FROM<http://example.org/dataset>
 WHERE{ ?observation a sosa:Observation ; sosa:hasFeatureOfInterest ex:omm_station_07005 ; sosa:observedProperty ?observedProperty ; sosa:hasSimpleResult ?result ; sosa:resultTime ?resultTime FILTER ( ( ?observedProperty = ex:Temperature ) || ( ?observedProperty = ex:Humidity ) ) } ORDER BY ?resultTime"
 }
 ```
-2. `POST http://localhost:8080/sparql/query`
+2. `POST http://localhost:8080/sparql/queryPerDay`
 ```
 {
     "stationId": "07005",
-    "attributes": ["Temperature", "Humidity", "Pressure"]
+    "attributes": ["Temperature", "Humidity", "Pressure"],
+     "dateTime": "2024-01-01T00:00:00"
+}
+```
+
+3. `POST http://localhost:8080/sparqlv2/queryPerMonth`
+```
+{
+  {
+    "stationId": "07005",
+    "attributes": ["Temperature", "Humidity", "Pressure"],
+    "dateTime": "2024-10"
+}
+}
+```
+
+4. `POST http://localhost:8080/sparqlv2/querySortedBy`
+```
+{
+  {
+    "type": "ascend",
+    "lenght": 3,
+    "attribute": "Temperature"
+}
 }
 ```
 
