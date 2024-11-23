@@ -64,11 +64,8 @@ WHERE {
   BIND (IRI(CONCAT("http://example.org/observation/windSpeed/", ?numer_sta, "-", ?date)) AS ?windSpeedObservation)
   BIND (IRI(CONCAT("http://example.org/observation/horizontalVisibility/", ?numer_sta, "-", ?date)) AS ?horizontalVisibilityObservation)
   BIND (IRI(CONCAT("http://example.org/station/", CONCAT("omm_station_",?numer_sta))) AS ?ommStation)
- 
-  # BIND (STR(?numer_sta) AS ?station_id)
   BIND (xsd:dateTime(STRDT(CONCAT(SUBSTR(?date, 1, 4), "-", SUBSTR(?date, 5, 2), "-", SUBSTR(?date, 7, 2), "T", 
                                   SUBSTR(?date, 9, 2), ":", SUBSTR(?date, 11, 2), ":", SUBSTR(?date, 13, 2)), xsd:dateTime)) AS ?dateTime)
-  # BIND(xsd:dateTime(concat(?date, "T00:00:00")) as ?dateTime)
   BIND (xsd:float(?t) AS ?temperature)
   BIND (xsd:int(?u) AS ?humidity)
   BIND (xsd:int(?pmer) AS ?pressure)
