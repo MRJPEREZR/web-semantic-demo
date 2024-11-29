@@ -78,18 +78,71 @@ function StatisticsPage() {
     const [selectedStation, setSelectedStation] = useState('');
     const [month, setMonth] = useState('');  // Index du mois (0 = Janvier)
     const [weatherData, setWeatherData] = useState({
-      highestTemp: 25,
-      lowestTemp: 10,
-      highestDay: "15/01/24",
-      lowestDay: "22/01/24",
-      averageTemp: 22,
+      highestTemp: 0,
+      lowestTemp: 0,
+      highestDay: "N/A",
+      lowestDay: "N/A",
+      averageTemp: 0,
     });
 
       // Handle selection of station
     const handleStationChange = (e) => {
       setSelectedStation(e.target.value);
     };
+
+    const handleDataRequest = async () => {
+      console.log("Station selected:", selectedStation); 
+      console.log("Month selected:", month); 
+
+      if (!selectedStation || month === "") {
+        alert("Veuillez sélectionner une station et un mois.");
+        return;
+      }
     
+      const attributes = ["temperature", "humidity", "pressure", "windSpeed"]; // Les attributs requis
+      const body = {
+        stationId: selectedStation,
+        attributes: attributes,
+        dateTime: `2024-${(month + 1).toString().padStart(2, "0")}` // Format : YYYY-MM
+      };
+    
+      try {
+        const response = await fetch("http://localhost:8080/sparqlv2/queryPerMonth", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(body),
+        });
+        console.log("Response Status:", response.status);
+    
+        if (!response.ok) {
+          throw new Error("Erreur lors de la récupération des données");
+        }
+    
+        const data = await response.json();
+        console.log(data); // Pour tester la réponse
+        updateWeatherData(data); // Mise à jour des données météorologiques
+      } catch (error) {
+        console.error("Error:",error);
+        alert("Une erreur s'est produite. Veuillez réessayer.");
+      }
+    };
+    const updateWeatherData = (data) => {
+      console.log("Weather data before processing:", data);
+  // Transforme les résultats en un format lisible
+  const weatherStats = {
+    averageTemp: data.results?.bindings?.find(x => x.observedProperty.value.includes("temperature"))?.average?.value || "N/A",
+    averageHumidity: data.results?.bindings?.find(x => x.observedProperty.value.includes("humidity"))?.average?.value || "N/A",
+    averagePressure: data.results?.bindings?.find(x => x.observedProperty.value.includes("pressure"))?.average?.value || "N/A",
+    averageWind: data.results?.bindings?.find(x => x.observedProperty.value.includes("windSpeed"))?.average?.value || "N/A",
+  };
+
+  console.log("Processed weather stats:", weatherStats); // Vérification des données traitées
+
+  setWeatherData(weatherStats);
+};
+
 
   
     return (
@@ -105,6 +158,7 @@ function StatisticsPage() {
                 </option>
               ))}
             </select>
+
           </div>
   
           <div>
@@ -117,6 +171,12 @@ function StatisticsPage() {
               ))}
             </select>
           </div>
+          {/* Fetch Data Button */}
+
+          <button onClick={handleDataRequest}>
+
+          Get Weather Data
+          </button>
         </div>
         <h1>Weather forecast for {stations.find((s) => s.id === selectedStation)?.name} station</h1>
   
@@ -129,13 +189,14 @@ function StatisticsPage() {
               <div className='box' >
                 <div className="col2"><FaTemperatureHigh/><p >Temperature</p></div>
                 
-                <h4 className='p3'>mean:</h4>
+                <h4 className='p3'>mean:{weatherData.averageTemp}</h4>
+
                 {/* put here the average temparature for the city selected*/}
                 <Bar/>
               </div> 
               <div className='box'>
                 <div className="col2"><FaPercentage/><p>Humidity</p></div>
-                  <h4>mean:</h4>
+                  <h4>mean:{weatherData.averageHumidity}</h4>
                   {/* put here the average humidity for the city selected*/}
                   <Bar/>
                 
@@ -144,7 +205,7 @@ function StatisticsPage() {
                 <div className="col2">
                   <FaCloudRain/><p >Pressure</p>
                 </div>
-                <h4>mean:</h4>
+                <h4>mean:{weatherData.averagePressure}</h4>
                 {/* put here the average pressure for the city selected*/}
                 <Bar/>
               </div> 
@@ -152,7 +213,7 @@ function StatisticsPage() {
                 <div className="col2">
                   <FaWind/><p >Wind Speed</p>
                 </div>
-                <h4>mean:</h4>
+                <h4>mean:{weatherData.averageWind}</h4>
                 {/* put here the average wind speed for the city selected*/}
                 <Bar/>
               </div> 
