@@ -128,7 +128,6 @@ function WeatherPage() {
     setRawResponse(''); // Clear previous raw response
 
     const formattedDate = formatDateToSPARQL(selectedDate);
-    console.log(formattedDate);
 
     const requestBody = {
       stationId: selectedStation,
@@ -150,6 +149,7 @@ function WeatherPage() {
       }
 
       const data = await response.json();
+      console.log(data);
 
       // Update both structured weather data and raw response string
       setWeatherData(data);

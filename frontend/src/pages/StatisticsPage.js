@@ -99,12 +99,14 @@ function StatisticsPage() {
         return;
       }
     
-      const attributes = ["temperature", "humidity", "pressure", "windSpeed"]; // Les attributs requis
+      const attributes = ["Temperature", "Humidity", "Pressure", "WindSpeed"]; // Les attributs requis
       const body = {
         stationId: selectedStation,
         attributes: attributes,
         dateTime: `2024-${(month + 1).toString().padStart(2, "0")}` // Format : YYYY-MM
       };
+
+      console.log(body);
     
       try {
         const response = await fetch("http://localhost:8080/sparqlv2/queryPerMonth", {
@@ -132,10 +134,10 @@ function StatisticsPage() {
       console.log("Weather data before processing:", data);
   // Transforme les résultats en un format lisible
   const weatherStats = {
-    averageTemp: data.results?.bindings?.find(x => x.observedProperty.value.includes("temperature"))?.average?.value || "N/A",
-    averageHumidity: data.results?.bindings?.find(x => x.observedProperty.value.includes("humidity"))?.average?.value || "N/A",
-    averagePressure: data.results?.bindings?.find(x => x.observedProperty.value.includes("pressure"))?.average?.value || "N/A",
-    averageWind: data.results?.bindings?.find(x => x.observedProperty.value.includes("windSpeed"))?.average?.value || "N/A",
+    averageTemp: data.results?.bindings?.find(x => x.observedProperty.value.includes("Temperature"))?.average?.value || "N/A",
+    averageHumidity: data.results?.bindings?.find(x => x.observedProperty.value.includes("Humidity"))?.average?.value || "N/A",
+    averagePressure: data.results?.bindings?.find(x => x.observedProperty.value.includes("Pressure"))?.average?.value || "N/A",
+    averageWind: data.results?.bindings?.find(x => x.observedProperty.value.includes("WindSpeed"))?.average?.value || "N/A",
   };
 
   console.log("Processed weather stats:", weatherStats); // Vérification des données traitées
