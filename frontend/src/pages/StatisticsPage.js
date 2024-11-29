@@ -79,9 +79,17 @@ function StatisticsPage() {
     const [month, setMonth] = useState('');
     const [weatherData, setWeatherData] = useState({
       averageTemp: 'N/A',
+      minTemp: 'N/A',
+      maxTemp: 'N/A',
       averageHumidity: 'N/A',
+      minHumidity: 'N/A',
+      maxHumidity: 'N/A',
       averagePressure: 'N/A',
+      minPressure: 'N/A',
+      maxPressure: 'N/A',
       averageWind: 'N/A',
+      minWind: 'N/A',
+      maxWind: 'N/A',
     });
 
     // Transform value helper
@@ -111,9 +119,17 @@ function StatisticsPage() {
 
       return {
         averageTemp: transformValue('Temperature', temperatureData?.average?.value),
+        minTemp: transformValue('Temperature', temperatureData?.min?.value), 
+        maxTemp: transformValue('Temperature', temperatureData?.max?.value), 
         averagePressure: transformValue('Pressure', pressureData?.average?.value),
+        minPressure: transformValue('Pressure', pressureData?.min?.value), 
+        maxPressure: transformValue('Pressure', pressureData?.max?.value), 
         averageHumidity: transformValue('Humidity', humidityData?.average?.value),
+        minHumidity: transformValue('Humidity', humidityData?.min?.value), 
+        maxHumidity: transformValue('Humidity', humidityData?.max?.value), 
         averageWind: transformValue('WindSpeed', windSpeedData?.average?.value),
+        minWind: transformValue('WindSpeed', windSpeedData?.min?.value), 
+        maxWind: transformValue('WindSpeed', windSpeedData?.max?.value), 
       };
     };
 
@@ -199,7 +215,7 @@ function StatisticsPage() {
                     {weatherData.averageTemp} °C
                   </span>
                 </h4>
-                <Bar />
+                <Bar minV={weatherData.minTemp} maxV={weatherData.maxTemp} mean={weatherData.averageTemp} />
               </div>
 
               <div className='box'>
@@ -207,21 +223,21 @@ function StatisticsPage() {
                 <h4>mean: 
                   <span style={{ color: '#6bffd0', fontSize: '30px', fontWeight: 'bold', display: 'block' }}>{weatherData.averageHumidity} %</span>
                 </h4>
-                <Bar />
+                <Bar minV={weatherData.minHumidity} maxV={weatherData.maxHumidity} mean={weatherData.averageHumidity} />
               </div>
               <div className='box'>
                 <div className="col2"><FaCloudRain /><p>Pressure</p></div>
                 <h4>mean: 
                   <span style={{ color: '#6bffd0', fontSize: '30px', fontWeight: 'bold', display: 'block' }}>{weatherData.averagePressure} kPa</span>
                 </h4>
-                <Bar />
+                <Bar minV={weatherData.minPressure} maxV={weatherData.maxPressure} mean={weatherData.averagePressure} />
               </div>
               <div className='box'>
                 <div className="col2"><FaWind /><p>Wind Speed</p></div>
                 <h4>mean: 
                   <span style={{ color: '#6bffd0', fontSize: '30px', fontWeight: 'bold', display: 'block' }}>{weatherData.averageWind} km/h</span>
                 </h4>
-                <Bar />
+                <Bar minV={weatherData.minWind} maxV={weatherData.maxWind} mean={weatherData.averageWind} />
               </div>
             </div>
           </div>
