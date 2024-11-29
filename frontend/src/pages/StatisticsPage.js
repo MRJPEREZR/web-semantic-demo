@@ -90,6 +90,11 @@ function StatisticsPage() {
       setSelectedStation(e.target.value);
     };
 
+     // Handle selection of month
+     const handleMonthChange = (e) => {
+      setMonth(Number(e.target.value));
+    };
+
     const handleDataRequest = async () => {
       console.log("Station selected:", selectedStation); 
       console.log("Month selected:", month); 
@@ -165,7 +170,8 @@ function StatisticsPage() {
   
           <div>
             <label>Choose the month:</label>
-            <select value={month} onChange={(e) => setMonth(Number(e.target.value))}>
+            <select value={month} onChange={handleMonthChange}>
+            <option value="">-- Select a month --</option>
               {months.map((monthName, index) => (
                 <option key={index} value={index}>
                   {monthName}
@@ -191,7 +197,7 @@ function StatisticsPage() {
               <div className='box' >
                 <div className="col2"><FaTemperatureHigh/><p >Temperature</p></div>
                 
-                <h4 className='p3'>mean:{weatherData.averageTemp}</h4>
+                <h4 className='p3'>mean:{weatherData.averageTemp} °C</h4>
 
                 {/* put here the average temparature for the city selected*/}
                 <Bar/>
