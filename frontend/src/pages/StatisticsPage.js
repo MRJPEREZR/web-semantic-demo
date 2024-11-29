@@ -246,6 +246,31 @@ function StatisticsPage() {
             </div>
           </div>
         </div>
+
+
+{/* mois les plus chauds et mois les plus froids*/}
+        <div style={{display: "flex", flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
+          <div className='result'>
+            <div className='col'> <h2> The <span style={{color:'red'}}>hottest</span> months of the year</h2>
+                {/* liste des mois les plus chauds*/}
+            
+            </div>
+
+            
+
+
+          </div>
+          <div className='result'>
+            <div className='col'> <h2> The <span style={{color:'blue'}}>coldest</span> months of the year</h2>
+                {/* liste des mois les plus chauds*/}
+            </div>
+
+          </div>
+
+        </div>
+
+
+
         <button onClick={() => navigate('/')}>back</button>
       </div>
     );
