@@ -76,102 +76,105 @@ const months = [
 
 function StatisticsPage() {
     const [selectedStation, setSelectedStation] = useState('');
-    const [month, setMonth] = useState('');  // Index du mois (0 = Janvier)
+    const [month, setMonth] = useState('');
     const [weatherData, setWeatherData] = useState({
-      highestTemp: 0,
-      lowestTemp: 0,
-      highestDay: "N/A",
-      lowestDay: "N/A",
-      averageTemp: 0,
+      averageTemp: 'N/A',
+      averageHumidity: 'N/A',
+      averagePressure: 'N/A',
+      averageWind: 'N/A',
     });
 
-      // Handle selection of station
+    // Transform value helper
+    const transformValue = (attribute, value) => {
+      if (value === undefined || value === null) return 'N/A';
+
+      if (attribute === 'Temperature') {
+        return (value - 273.15).toFixed(2); // Kelvin to Celsius
+      }
+
+      if (attribute === 'Pressure') {
+        return (value / 1000).toFixed(2); // Convert to kilopascals
+      }
+
+      if (attribute === 'WindSpeed') {
+        return (value * 3.6).toFixed(2); // Convert to km/h
+      }
+
+      return parseFloat(value).toFixed(2); // Default case
+    };
+
+    const extractWeatherData = (data) => {
+      const temperatureData = data.results?.bindings?.find(attr => attr.observedProperty.value.includes('Temperature'));
+      const pressureData = data.results?.bindings?.find(attr => attr.observedProperty.value.includes('Pressure'));
+      const humidityData = data.results?.bindings?.find(attr => attr.observedProperty.value.includes('Humidity'));
+      const windSpeedData = data.results?.bindings?.find(attr => attr.observedProperty.value.includes('WindSpeed'));
+
+      return {
+        averageTemp: transformValue('Temperature', temperatureData?.average?.value),
+        averagePressure: transformValue('Pressure', pressureData?.average?.value),
+        averageHumidity: transformValue('Humidity', humidityData?.average?.value),
+        averageWind: transformValue('WindSpeed', windSpeedData?.average?.value),
+      };
+    };
+
     const handleStationChange = (e) => {
       setSelectedStation(e.target.value);
     };
 
-     // Handle selection of month
-     const handleMonthChange = (e) => {
+    const handleMonthChange = (e) => {
       setMonth(Number(e.target.value));
     };
 
     const handleDataRequest = async () => {
-      console.log("Station selected:", selectedStation); 
-      console.log("Month selected:", month); 
-
       if (!selectedStation || month === "") {
         alert("Veuillez sélectionner une station et un mois.");
         return;
       }
-    
-      const attributes = ["Temperature", "Humidity", "Pressure", "WindSpeed"]; // Les attributs requis
+
       const body = {
         stationId: selectedStation,
-        attributes: attributes,
-        dateTime: `2024-${(month + 1).toString().padStart(2, "0")}` // Format : YYYY-MM
+        attributes: ["Temperature", "Humidity", "Pressure", "WindSpeed"],
+        dateTime: `2024-${(month + 1).toString().padStart(2, "0")}`
       };
 
-      console.log(body);
-    
       try {
         const response = await fetch("http://localhost:8080/sparqlv2/queryPerMonth", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(body),
         });
-        console.log("Response Status:", response.status);
-    
-        if (!response.ok) {
-          throw new Error("Erreur lors de la récupération des données");
-        }
-    
+
+        if (!response.ok) throw new Error("Erreur lors de la récupération des données");
+
         const data = await response.json();
-        console.log(data); // Pour tester la réponse
-        updateWeatherData(data); // Mise à jour des données météorologiques
+        const processedData = extractWeatherData(data);
+        setWeatherData(processedData);
+
       } catch (error) {
-        console.error("Error:",error);
+        console.error(error);
         alert("Une erreur s'est produite. Veuillez réessayer.");
       }
     };
-    const updateWeatherData = (data) => {
-      console.log("Weather data before processing:", data);
-  // Transforme les résultats en un format lisible
-  const weatherStats = {
-    averageTemp: data.results?.bindings?.find(x => x.observedProperty.value.includes("Temperature"))?.average?.value || "N/A",
-    averageHumidity: data.results?.bindings?.find(x => x.observedProperty.value.includes("Humidity"))?.average?.value || "N/A",
-    averagePressure: data.results?.bindings?.find(x => x.observedProperty.value.includes("Pressure"))?.average?.value || "N/A",
-    averageWind: data.results?.bindings?.find(x => x.observedProperty.value.includes("WindSpeed"))?.average?.value || "N/A",
-  };
 
-  console.log("Processed weather stats:", weatherStats); // Vérification des données traitées
-
-  setWeatherData(weatherStats);
-};
-
-
-  
     return (
       <div className="App">
-         <div className="selector">
+        <div className="selector">
           <div>
-            <label >Choose a station:</label>
+            <label>Choose a station:</label>
             <select id="station" value={selectedStation} onChange={handleStationChange}>
-            <option value="">-- Select a Station --</option>
+              <option value="">-- Select a Station --</option>
               {stations.map((station) => (
                 <option key={station.id} value={station.id}>
                   {station.name}
                 </option>
               ))}
             </select>
-
           </div>
-  
+
           <div>
             <label>Choose the month:</label>
             <select value={month} onChange={handleMonthChange}>
-            <option value="">-- Select a month --</option>
+              <option value="">-- Select a month --</option>
               {months.map((monthName, index) => (
                 <option key={index} value={index}>
                   {monthName}
@@ -179,90 +182,52 @@ function StatisticsPage() {
               ))}
             </select>
           </div>
-          {/* Fetch Data Button */}
-
-          <button onClick={handleDataRequest}>
-
-          Get Weather Data
-          </button>
+          <button onClick={handleDataRequest}>Get Weather Data</button>
         </div>
+
         <h1>Weather forecast for {stations.find((s) => s.id === selectedStation)?.name} station</h1>
-  
-       
-  
-        {/* Affichage des résultats avec des valeurs statiques */}
+
         <div className='result'>
-          <div className='col'><h2 >Average Statistics</h2>
+          <div className='col'>
+            <h2>Average Statistics</h2>
             <div className='result2'>
-              <div className='box' >
-                <div className="col2"><FaTemperatureHigh/><p >Temperature</p></div>
-                
-                <h4 className='p3'>mean:{weatherData.averageTemp} °C</h4>
-
-                {/* put here the average temparature for the city selected*/}
-                <Bar/>
-              </div> 
               <div className='box'>
-                <div className="col2"><FaPercentage/><p>Humidity</p></div>
-                  <h4>mean:{weatherData.averageHumidity}</h4>
-                  {/* put here the average humidity for the city selected*/}
-                  <Bar/>
-                
+                <div className="col2"><FaTemperatureHigh /><p>Temperature</p></div>
+                <h4 className='p3'>
+                  mean:
+                  <span style={{ color: '#6bffd0', fontSize: '30px', fontWeight: 'bold', display: 'block' }}>
+                    {weatherData.averageTemp} °C
+                  </span>
+                </h4>
+                <Bar />
+              </div>
+
+              <div className='box'>
+                <div className="col2"><FaPercentage /><p>Humidity</p></div>
+                <h4>mean: 
+                  <span style={{ color: '#6bffd0', fontSize: '30px', fontWeight: 'bold', display: 'block' }}>{weatherData.averageHumidity} %</span>
+                </h4>
+                <Bar />
               </div>
               <div className='box'>
-                <div className="col2">
-                  <FaCloudRain/><p >Pressure</p>
-                </div>
-                <h4>mean:{weatherData.averagePressure}</h4>
-                {/* put here the average pressure for the city selected*/}
-                <Bar/>
-              </div> 
+                <div className="col2"><FaCloudRain /><p>Pressure</p></div>
+                <h4>mean: 
+                  <span style={{ color: '#6bffd0', fontSize: '30px', fontWeight: 'bold', display: 'block' }}>{weatherData.averagePressure} kPa</span>
+                </h4>
+                <Bar />
+              </div>
               <div className='box'>
-                <div className="col2">
-                  <FaWind/><p >Wind Speed</p>
-                </div>
-                <h4>mean:{weatherData.averageWind}</h4>
-                {/* put here the average wind speed for the city selected*/}
-                <Bar/>
-              </div> 
+                <div className="col2"><FaWind /><p>Wind Speed</p></div>
+                <h4>mean: 
+                  <span style={{ color: '#6bffd0', fontSize: '30px', fontWeight: 'bold', display: 'block' }}>{weatherData.averageWind} km/h</span>
+                </h4>
+                <Bar />
+              </div>
             </div>
-
           </div>
-
         </div>
-
-        {/*not use
-        <div className="result">
-            <div className="col">
-                <h2>Highest temperature of the month</h2>
-                <div className='result2'>
-                    <div className="col2"><p className='p1'>{weatherData.highestTemp}°C</p> 
-                      
-                    <div className="col2"><p> {weatherData.highestDay}</p></div>
-                 
-                </div>
-                
-            </div>
-            <div className="col">
-              <h2>Lowest temperature of the month</h2>
-              <div className='result2'>
-                <div className='col2'><p className='p2'>{weatherData.lowestTemp}°C</p></div>
-                <div className='col2'> <p> {weatherData.lowestDay}</p></div>
-              </div>
-                
-                 
-                
-            </div>
-
-        </div>
-      */}
-          
-          
       </div>
     );
-  
-};
-
-
+}
 
 export default StatisticsPage;
