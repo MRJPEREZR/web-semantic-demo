@@ -1,4 +1,5 @@
 import './bar.css';
+import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
 
 
 function Bar({minV,maxV,mean}) {
@@ -6,14 +7,19 @@ function Bar({minV,maxV,mean}) {
 
    return (
     <div className="temperature-bar">
-    <div className="temperature-range">
-      <span className="temperature-value-min" style={{color:'red'}}>{minV}</span>
-      <span className="temperature-value-max" style={{color:'blue'}}>{maxV}</span>
+      <div className="temperature-range">
+        <span className="temperature-value-min" style={{ color: 'blue' }}>
+          {minV} <FaArrowDown style={{ color: 'blue', fontSize: '20px', verticalAlign: 'middle',marginBottom:10 }} />
+        </span>
+        <span className="temperature-value-max" style={{ color: 'red' }}>
+          {maxV} <FaArrowUp style={{ color: 'red', fontSize: '20px', verticalAlign: 'middle',marginBottom:10  }} />
+        </span>
+      </div>
+      <div className="temperature-bar-container">
+        <div className="temperature-bar-fill" style={{ width: `${barWidth}%` }}></div>
+      </div>
     </div>
-    <div className="temperature-bar-container">
-      <div className="temperature-bar-fill" style={{width: `${barWidth}%`, }}></div> {/* put mean value in percentage*/}
-    </div>
-  </div>
+
   );
 }
 

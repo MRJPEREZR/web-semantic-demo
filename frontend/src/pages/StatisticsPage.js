@@ -2,6 +2,7 @@
 import './StatisticsPage.css';
 import React, { useState } from "react";
 import { FaTemperatureHigh, FaWind, FaPercentage, FaCloudRain } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import Bar from '../components/bar';
 
 // Sample station data for selection
@@ -172,6 +173,9 @@ function StatisticsPage() {
       }
     };
 
+    // redirects to the new TextSubmitPage
+  const navigate = useNavigate();
+
     return (
       <div className="App">
         <div className="selector">
@@ -201,7 +205,7 @@ function StatisticsPage() {
           <button onClick={handleDataRequest}>Get Weather Data</button>
         </div>
 
-        <h1>Weather forecast for {stations.find((s) => s.id === selectedStation)?.name} station</h1>
+        <h1>Monthly Weather forecast for {stations.find((s) => s.id === selectedStation)?.name} station</h1>
 
         <div className='result'>
           <div className='col'>
@@ -242,6 +246,7 @@ function StatisticsPage() {
             </div>
           </div>
         </div>
+        <button onClick={() => navigate('/')}>back</button>
       </div>
     );
 }

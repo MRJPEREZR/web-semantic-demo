@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import './WeatherPage.css';
+import { faChartBar } from "@fortawesome/free-solid-svg-icons"; 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -338,7 +340,10 @@ function WeatherPage() {
 
       {/* New button to navigate to TextSubmitPage */}
       <button onClick={() => navigate('/text-submit')}>Go to Custom Sparql Query Submission</button>
-
+      <button className="blinking-button" onClick={() => navigate('/statistics')}>
+        <FontAwesomeIcon icon={faChartBar} className="button-icon" />
+        Show Months Details Statistics
+      </button>
     </div>
   );
 }
