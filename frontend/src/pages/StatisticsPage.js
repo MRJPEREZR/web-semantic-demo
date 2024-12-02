@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { FaTemperatureHigh, FaWind, FaPercentage, FaCloudRain } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import Bar from '../components/bar';
+import TemperatureChart from '../components/diagramm';
 
 // Sample station data for selection
 const stations = [
@@ -215,7 +216,7 @@ function StatisticsPage() {
                 <div className="col2"><FaTemperatureHigh /><p>Temperature</p></div>
                 <h4 className='p3'>
                   mean:
-                  <span style={{ color: '#6bffd0', fontSize: '30px', fontWeight: 'bold', display: 'block' }}>
+                  <span style={{ color: '#4682B4', fontSize: '40px', fontWeight: 'bold', display: 'block' }}>
                     {weatherData.averageTemp} °C
                   </span>
                 </h4>
@@ -225,21 +226,21 @@ function StatisticsPage() {
               <div className='box'>
                 <div className="col2"><FaPercentage /><p>Humidity</p></div>
                 <h4>mean: 
-                  <span style={{ color: '#6bffd0', fontSize: '30px', fontWeight: 'bold', display: 'block' }}>{weatherData.averageHumidity} %</span>
+                  <span style={{ color: '#4682B4', fontSize: '40px', fontWeight: 'bold', display: 'block' }}>{weatherData.averageHumidity} %</span>
                 </h4>
                 <Bar minV={weatherData.minHumidity} maxV={weatherData.maxHumidity} mean={weatherData.averageHumidity} />
               </div>
               <div className='box'>
                 <div className="col2"><FaCloudRain /><p>Pressure</p></div>
                 <h4>mean: 
-                  <span style={{ color: '#6bffd0', fontSize: '30px', fontWeight: 'bold', display: 'block' }}>{weatherData.averagePressure} kPa</span>
+                  <span style={{ color: '#4682B4', fontSize: '40px', fontWeight: 'bold', display: 'block' }}>{weatherData.averagePressure} kPa</span>
                 </h4>
                 <Bar minV={weatherData.minPressure} maxV={weatherData.maxPressure} mean={weatherData.averagePressure} />
               </div>
               <div className='box'>
                 <div className="col2"><FaWind /><p>Wind Speed</p></div>
                 <h4>mean: 
-                  <span style={{ color: '#6bffd0', fontSize: '30px', fontWeight: 'bold', display: 'block' }}>{weatherData.averageWind} km/h</span>
+                  <span style={{color: '#4682B4', fontSize: '40px', fontWeight: 'bold', display: 'block' }}>{weatherData.averageWind} km/h</span>
                 </h4>
                 <Bar minV={weatherData.minWind} maxV={weatherData.maxWind} mean={weatherData.averageWind} />
               </div>
@@ -251,21 +252,16 @@ function StatisticsPage() {
 {/* mois les plus chauds et mois les plus froids*/}
         <div style={{display: "flex", flexDirection:'row', justifyContent:'center', alignItems:'center'}}>
           <div className='result'>
-            <div className='col'> <h2> The <span style={{color:'red'}}>hottest</span> months of the year</h2>
-                {/* liste des mois les plus chauds*/}
-            
+            <div className='col'>
+            <h2 style={{margin:'40px'}}>Focus on the hottest and the coldest months of 2024</h2>
+            <TemperatureChart/>
             </div>
-
+            
             
 
 
           </div>
-          <div className='result'>
-            <div className='col'> <h2> The <span style={{color:'blue'}}>coldest</span> months of the year</h2>
-                {/* liste des mois les plus chauds*/}
-            </div>
-
-          </div>
+          
 
         </div>
 
