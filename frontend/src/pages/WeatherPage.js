@@ -184,10 +184,10 @@ function WeatherPage() {
     <div className="weather-page">
       <Header />
       <div className="selection-container">
-        <h2>Select Station and Attributes</h2>
+        <h1>Select Station and Attributes</h1>
 
         {/* Station Selection */}
-        <label htmlFor="station">Select Station:</label>
+        <label htmlFor="station" style={{color:'#00BFFF', fontSize:'22px'}}>Select Station:</label>
         <select id="station" value={selectedStation} onChange={handleStationChange}>
           <option value="">-- Select a Station --</option>
           {stations.map((station) => (
@@ -198,10 +198,10 @@ function WeatherPage() {
         </select>
 
         {/* Attributes Selection */}
-        <h3>Select Attributes:</h3>
+        <h2>Select Attributes:</h2>
         <div className="attributes-checkboxes">
           {attributesList.map((attribute) => (
-            <label key={attribute.key}>
+            <label key={attribute.key} style={{color:'#00BFFF', fontSize:'22px'}}>
               <input
                 type="checkbox"
                 checked={selectedAttributes.includes(attribute.key)}
@@ -214,7 +214,7 @@ function WeatherPage() {
 
         {/* Date Picker */}
         <div>
-          <label htmlFor="date">Select Date:</label>
+          <label htmlFor="date" style={{color:'#000000', fontSize:'22px'}}>Select Date:</label>
           <DatePicker
             selected={selectedDate}
             onChange={handleDateChange}
@@ -322,17 +322,18 @@ function WeatherPage() {
             </ul>
           </>
         ) : (
-          <p style={{ color: '#666' }}>Select a station and attributes to view weather data.</p>
+          <p style={{ color: '#B0E0E6' }}>Select a station and attributes to view weather data.</p>
         )}
       </div>
 
       {/* Raw Response Text Box */}
       <div className="raw-response">
-        <h3>Raw Response</h3>
+        <h2>Raw Response</h2>
         <textarea readOnly 
         ref={responseTextareaRef}
         style={{  overflow: 'hidden',
         borderRadius: '20px',
+        margin:'20px',
         border: '3px solid #4682B4', 
         padding: '10px'  }}
         value={rawResponse} />
