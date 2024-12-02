@@ -4,11 +4,12 @@ import "chart.js/auto"; // Import automatique de Chart.js pour React
 
 const TemperatureChart = () => {
   const [chartData, setChartData] = useState(null);
+  const [length, setLength] = useState(3); // État pour le nombre de mois à afficher
 
   // Fonction pour récupérer les mois les plus chauds et les plus froids
   const fetchTemperatureData = async () => {
     try {
-      // Requête pour les 3 mois les plus chauds
+      // Requête pour les mois les plus chauds
       const hotResponse = await fetch("http://localhost:8080/sparqlv2/querySortedBy", {
         method: "POST",
         headers: {
@@ -16,14 +17,14 @@ const TemperatureChart = () => {
         },
         body: JSON.stringify({
           type: "descend",
-          lenght: 3,
+          lenght: length, // Utilisation de l'état `length`
           attribute: "Temperature",
         }),
       });
 
       const hotData = await hotResponse.json();
 
-      // Requête pour les 3 mois les plus froids
+      // Requête pour les mois les plus froids
       const coldResponse = await fetch("http://localhost:8080/sparqlv2/querySortedBy", {
         method: "POST",
         headers: {
@@ -31,7 +32,7 @@ const TemperatureChart = () => {
         },
         body: JSON.stringify({
           type: "ascend",
-          lenght: 3,
+          lenght: length, // Utilisation de l'état `length`
           attribute: "Temperature",
         }),
       });
@@ -40,7 +41,7 @@ const TemperatureChart = () => {
 
       // Fonction pour convertir le mois "YYYY-MM" en nom complet du mois en français
       const monthNames = [
-        "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+        "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre",
       ];
 
       // Conversion des données Kelvin -> Celsius pour les mois chauds
@@ -77,14 +78,24 @@ const TemperatureChart = () => {
     }
   };
 
-  // Appel des données à l'initialisation
+  // Appel des données à l'initialisation et lors de la modification de `length`
   useEffect(() => {
     fetchTemperatureData();
-  }, []);
+  }, [length]); // Ajout de `length` comme dépendance
 
   return (
-    <div style={{ width: "500px", margin: "0 auto" }}>
-      
+    <div style={{ width: "500px", margin: "0 auto", textAlign: "center" }}>
+      <label>
+       TOP :
+        <input
+          type="number"
+          min="1"
+          value={length}
+          onChange={(e) => setLength(Number(e.target.value))} // Met à jour l'état `length`
+          style={{ marginLeft: "10px", padding: "5px", width: "60px" }}
+        />
+      </label>
+
       {chartData ? (
         <Pie data={chartData} />
       ) : (
