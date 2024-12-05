@@ -10,6 +10,19 @@ To downloaded, you can go to [METEO FRANCE - DONNÉES PUBLIQUES](https://donnees
 
 ## Data transformation from .csv to .ttl
 
+### Note
+
+In order to get the content of the file `/backend/src/main/resources/static/synop.2024.ttl` you should install git lfs (Large File System) because this file exceeds the maximum capacity to store a file on GitHub (it actually has all the triplets from january to november).
+
+To do this, you should execute the following commands:
+```
+git lfs install
+git lfs pull
+```
+
+After that, you should be able to see the whole file content.
+
+## From .csv to .ttl conversion
 (This step is already done and the .ttl file is stored under `/backend/src/main/resources/static/finalProject/backend/src/main/resources/static/synop.2024102509.ttl`)
 
 To transform the original files from .csv to .ttl (extension used for represent knowledge graph according to RDF triples), we use [`tarql`](https://github.com/tarql/tarql).
